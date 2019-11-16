@@ -74,17 +74,23 @@
 
         <Label Text="Buidling:" FontSize="Medium" />
         <Label Text="{Binding Item.building}"  FontSize="Small"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+            
+            <Image x:Name="btnMap" Source="map.png" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32" Aspect="Fill" IsVisible="true">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btnMap_Clicked"  />
+                </Image.GestureRecognizers>
+            </Image>
         </StackLayout>
-
         <StackLayout Orientation="Horizontal">
             <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
-                     HorizontalOptions="StartAndExpand"></Button>
+                     HorizontalOptions="CenterAndExpand"></Button>
             <Button x:Name="btnPause" Text="Pause" Clicked="btnPause_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
             <Button x:Name="btnResume" Text="Resume" Clicked="btnResume_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
             <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
-                    HorizontalOptions="EndAndExpand"></Button>     
+                    HorizontalOptions="CenterAndExpand"></Button>
         </StackLayout>
     </StackLayout>
 </ContentPage>

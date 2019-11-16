@@ -36,7 +36,7 @@ namespace WorkerApp.Views
 
             _selectedItem = item;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item), item));
+            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

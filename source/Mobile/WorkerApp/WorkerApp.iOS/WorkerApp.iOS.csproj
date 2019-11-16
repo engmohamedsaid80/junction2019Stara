@@ -142,4 +142,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\stara.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\map.png" />
+  </ItemGroup>
 </Project>
