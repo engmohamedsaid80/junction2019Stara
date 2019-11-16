@@ -17,9 +17,13 @@
             .Toolbar {
                 background-color: #0000bf;
             }
-            #btnStart {
-                background-color: #0072c6;
-                color: white;
+           .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .Priority {
+                color: #bd2719;
+                text-transform: uppercase;
             }
             ]]>
         </StyleSheet>
@@ -34,16 +38,28 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
+
+        <StackLayout Orientation="Horizontal">
+        <Label
+        StyleClass="TaskHeader"
+        Text="{Binding Item.Text}" 
+        LineBreakMode="NoWrap" 
+        Style="{DynamicResource ListItemTextStyle}" 
+        FontSize="16"
+        HorizontalOptions="StartAndExpand"
+        />
+        <Label 
+        StyleClass="Priority"
+        Text="{Binding Item.priority}" 
+        LineBreakMode="NoWrap" 
+        Style="{DynamicResource ListItemTextStyle}" 
+        FontSize="16"
+        HorizontalOptions="EndAndExpand"
+        />
+        </StackLayout>
+
         <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}"  FontSize="Small"/>
-
-        <Label Text="Status:" FontSize="Medium" />
-        <Label Text="{Binding Item.Status}"  FontSize="Small"/>
-
-        <Label Text="Priority:" FontSize="Medium" />
-        <Label Text="{Binding Item.priority}" FontSize="Small"/>
+        <Label Text="{Binding Item.Description}" FontSize="Medium"/>
 
         <Label Text="Street:" FontSize="Medium" />
         <Label Text="{Binding Item.street}"  FontSize="Small"/>
