@@ -12,7 +12,7 @@
             <![CDATA[
             ^contentpage {
                 font-family: "Arial";
-                background-color: #dedfe1;
+                background-color: white;
             }
             .Toolbar {
                 background-color: #0000bf;
@@ -35,7 +35,7 @@
             ]]>
         </StyleSheet>
     </ContentPage.Resources>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
