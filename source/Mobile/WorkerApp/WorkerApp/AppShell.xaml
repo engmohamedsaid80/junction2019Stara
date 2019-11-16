@@ -29,13 +29,13 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- 
+     
     <TabBar>
         <Tab Title="My Tasks" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
     </TabBar>
-    -->
+    
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.
 

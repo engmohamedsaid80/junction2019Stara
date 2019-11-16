@@ -49,31 +49,31 @@ namespace WorkerApp
 
             List<Item> Items = null;
 
-            Items = new List<Item>()
+            //Items = new List<Item>()
+            //{
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "1 item", Description="This is an item description.", Status=TaskStatus.Assigned, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923" },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "2 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "3 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "4 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "5 item", Description="This is an item description.", Status=TaskStatus.Started, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "6 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  }
+            //};
+
+            try
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "1 item", Description="This is an item description.", Status=TaskStatus.Assigned, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "2 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "3 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "4 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "5 item", Description="This is an item description.", Status=TaskStatus.Started, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "6 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  }
-            };
+                var uri = new Uri(string.Format(url, string.Empty));
+                HttpClient client = new HttpClient();
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Items = JsonConvert.DeserializeObject<List<Item>>(content);
+                }
+            }
+            catch (Exception ex)
+            {
 
-            //try
-            //{
-            //    var uri = new Uri(string.Format(url, string.Empty));
-            //    HttpClient client = new HttpClient();
-            //    var response = await client.GetAsync(uri);
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var content = await response.Content.ReadAsStringAsync();
-            //        Items = JsonConvert.DeserializeObject<List<Item>>(content);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
+            }
 
             return Items;
         }

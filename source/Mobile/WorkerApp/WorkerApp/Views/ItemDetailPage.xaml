@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.ItemDetailPage"
              Title="{Binding Title}">
-     
+
      <ContentPage.Resources>
         <StyleSheet>
             <![CDATA[
@@ -31,66 +31,67 @@
             ]]>
         </StyleSheet>
     </ContentPage.Resources>
+        
+            <ContentPage.ToolbarItems>
+                <ToolbarItem
+                        Text="Example Item"
+                        IconImageSource="stara.png"
+                        Order="Primary"
+                        Priority="0" />
+            </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical" Spacing="20" Padding="15">
+        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  Spacing="20" Padding="15">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  Spacing="20" Padding="15">
+                <Label
+                StyleClass="TaskHeader"
+                Text="{Binding Item.Text}" 
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" 
+                FontSize="16"
+                HorizontalOptions="StartAndExpand"
+            />
+                <Label 
+                StyleClass="Priority"
+                Text="{Binding Item.priority}" 
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" 
+                FontSize="16"
+                HorizontalOptions="EndAndExpand"
+            />
+            </StackLayout>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem
-                Text="Example Item"
-                IconImageSource="stara.png"
-                Order="Primary"
-                Priority="0" />
-    </ContentPage.ToolbarItems>
+            <Label Text="Description:" FontSize="Medium" />
+            <Label Text="{Binding Item.Description}" FontSize="Medium"/>
 
-    <StackLayout Spacing="20" Padding="15">
-        <StackLayout Orientation="Horizontal">
-        <Label
-        StyleClass="TaskHeader"
-        Text="{Binding Item.Text}" 
-        LineBreakMode="NoWrap" 
-        Style="{DynamicResource ListItemTextStyle}" 
-        FontSize="16"
-        HorizontalOptions="StartAndExpand"
-        />
-        <Label 
-        StyleClass="Priority"
-        Text="{Binding Item.priority}" 
-        LineBreakMode="NoWrap" 
-        Style="{DynamicResource ListItemTextStyle}" 
-        FontSize="16"
-        HorizontalOptions="EndAndExpand"
-        />
-    </StackLayout>
+            <Label Text="CONTACT PERSON:" FontSize="Medium" />
+            <Label Text="PHONE NUMBER:" FontSize="Medium" />
 
-        <StackLayout Orientation="Vertical" Spacing="20" Padding="20">
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Medium"/>
+            <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" HorizontalOptions="Center"/>
 
-        <Label Text="CONTACT PERSON:" FontSize="Medium" /> 
-        <Label Text="PHONE NUMBER:" FontSize="Medium" /> 
+            <Label Text="Street:" FontSize="Medium" />
+            <Label Text="{Binding Item.street}"  FontSize="Small"/>
 
-        <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" HorizontalAlignment="Center"/>
+            <Label Text="Buidling:" FontSize="Medium" />
+            <Label Text="{Binding Item.building}"  FontSize="Small"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
 
-        <Label Text="Street:" FontSize="Medium" />
-        <Label Text="{Binding Item.street}"  FontSize="Small"/>
-
-        <Label Text="Buidling:" FontSize="Medium" />
-        <Label Text="{Binding Item.building}"  FontSize="Small"/>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-            
-            <Image x:Name="btnMap" Source="map.png" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32" Aspect="Fill" IsVisible="true">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="btnMap_Clicked"  />
-                </Image.GestureRecognizers>
-            </Image>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
+                <Image x:Name="btnMap" Source="map.png" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32" Aspect="Fill" IsVisible="true">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnMap_Clicked"  />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
                      HorizontalOptions="CenterAndExpand"></Button>
-            <Button x:Name="btnPause" Text="Pause" Clicked="btnPause_Clicked"
+                <Button x:Name="btnPause" Text="Pause" Clicked="btnPause_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
-            <Button x:Name="btnResume" Text="Resume" Clicked="btnResume_Clicked"
+                <Button x:Name="btnResume" Text="Resume" Clicked="btnResume_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
-            <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
+                <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
+            </StackLayout>
         </StackLayout>
+
     </StackLayout>
 </ContentPage>
