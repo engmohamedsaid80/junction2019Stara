@@ -66,7 +66,7 @@
                                     Text="{Binding Text}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="24"
+                                    FontSize="16"
                                     HorizontalOptions="StartAndExpand"
                                     />
                                 <Label 
@@ -74,7 +74,7 @@
                                     Text="{Binding Status}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="24"
+                                    FontSize="16"
                                     HorizontalOptions="EndAndExpand"
                                     />
                             </StackLayout>
@@ -84,7 +84,7 @@
                                 Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
+                                FontSize="14"
                                 Padding="20"  />
 
                             <Label 
@@ -92,14 +92,14 @@
                                 Text="{Binding priority}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
+                                FontSize="14"
                                 Padding="20" />
                             <Label 
                                 StyleClass="TaskBuilding"
                                 Text="{Binding building}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
+                                FontSize="14"
                                 Padding="20" />
 
                             <Label 
