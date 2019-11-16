@@ -6,19 +6,66 @@
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.ItemDetailPage"
              Title="{Binding Title}">
+     
+     <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: #dedfe1;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+           .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .Priority {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
+    </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small"/>
+
+        <StackLayout Orientation="Horizontal">
+        <Label
+        StyleClass="TaskHeader"
+        Text="{Binding Item.Text}" 
+        LineBreakMode="NoWrap" 
+        Style="{DynamicResource ListItemTextStyle}" 
+        FontSize="16"
+        HorizontalOptions="StartAndExpand"
+        />
+        <Label 
+        StyleClass="Priority"
+        Text="{Binding Item.priority}" 
+        LineBreakMode="NoWrap" 
+        Style="{DynamicResource ListItemTextStyle}" 
+        FontSize="16"
+        HorizontalOptions="EndAndExpand"
+        />
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical">
         <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}"  FontSize="Small"/>
+        <Label Text="{Binding Item.Description}" FontSize="Medium"/>
 
-        <Label Text="Status:" FontSize="Medium" />
-        <Label Text="{Binding Item.Status}"  FontSize="Small"/>
+        <Label Text="CONTACT PERSON:" FontSize="Medium" /> 
+        <Label Text="PHONE NUMBER:" FontSize="Medium" /> 
 
-        
-        <Label Text="Priority:" FontSize="Medium" />
-        <Label Text="{Binding Item.priority}" FontSize="Small"/>
+        <Label Text="SEE PICTURES" FontSize="Medium" />
 
         <Label Text="Street:" FontSize="Medium" />
         <Label Text="{Binding Item.street}"  FontSize="Small"/>
@@ -43,7 +90,5 @@
             <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
         </StackLayout>
-        
     </StackLayout>
-    
 </ContentPage>
