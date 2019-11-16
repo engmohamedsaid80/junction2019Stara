@@ -58,14 +58,21 @@
         />
         </StackLayout>
 
+        <StackLayout Orientation="Vertical">
         <Label Text="Description:" FontSize="Medium" />
         <Label Text="{Binding Item.Description}" FontSize="Medium"/>
+
+        <Label Text="CONTACT PERSON:" FontSize="Medium" /> 
+        <Label Text="PHONE NUMBER:" FontSize="Medium" /> 
+
+        <Label Text="SEE PICTURES" FontSize="Medium" />
 
         <Label Text="Street:" FontSize="Medium" />
         <Label Text="{Binding Item.street}"  FontSize="Small"/>
 
         <Label Text="Buidling:" FontSize="Medium" />
         <Label Text="{Binding Item.building}"  FontSize="Small"/>
+        </StackLayout>
 
         <StackLayout Orientation="Horizontal">
             <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
