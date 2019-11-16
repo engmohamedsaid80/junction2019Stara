@@ -8,6 +8,16 @@
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
 
+    <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                background-color: lightgray;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem Text="Add" Clicked="AddItem_Clicked" />-->
     </ContentPage.ToolbarItems>
@@ -66,5 +76,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
 </ContentPage>
