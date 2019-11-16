@@ -19,27 +19,27 @@ namespace WorkerApp
 
         public async Task<string> UpdateTaskAsync(ItemUpdate itemUpdate)
         {
-            string url = RestUrl + "/api/apiprofile";
+            string url = RestUrl + "/api/Tasks";
             StringResponse ServiceResp = new StringResponse { Response = "" };
 
-            //try
-            //{
-            //    var uri = new Uri(string.Format(url, string.Empty));
+            try
+            {
+                var uri = new Uri(string.Format(url, string.Empty));
 
-            //    var json = JsonConvert.SerializeObject(item);
-            //    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var json = JsonConvert.SerializeObject(itemUpdate);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            //    HttpClient client = new HttpClient();
-            //    var response = await client.PostAsync(uri, content);
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var contentRes = await response.Content.ReadAsStringAsync();
-            //        ServiceResp = JsonConvert.DeserializeObject<StringResponse>(contentRes);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //}
+                HttpClient client = new HttpClient();
+                var response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var contentRes = await response.Content.ReadAsStringAsync();
+                    ServiceResp = JsonConvert.DeserializeObject<StringResponse>(contentRes);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
 
             return ServiceResp.Response;
         }
@@ -73,8 +73,8 @@ namespace WorkerApp
                     foreach (Models.Task item in TaskItems)
                     {
                         Item myItem = new Item();
-                        myItem.Id = Guid.NewGuid().ToString();// item.TaskId.ToString();
-                        myItem.Text = "item";
+                        myItem.Id = item.TaskId.ToString();
+                        myItem.Text = item.Title;
                         myItem.Description = "desc";
                         myItem.latitude = item.Latitude;
                         myItem.longitude = item.Longitude;

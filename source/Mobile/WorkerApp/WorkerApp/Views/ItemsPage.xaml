@@ -84,31 +84,27 @@
                                 Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
-                                Padding="20"  />
+                                FontSize="16" />
 
                             <Label 
                                 StyleClass="TaskPriority"
                                 Text="{Binding priority}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
-                                Padding="20" />
+                                FontSize="16" />
                             <Label 
                                 StyleClass="TaskBuilding"
                                 Text="{Binding building}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
-                                Padding="20" />
+                                FontSize="16" />
 
                             <Label 
                                 StyleClass="TaskStreet"
                                 Text="{Binding street}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16"
-                                Padding="20" />
+                                FontSize="16" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

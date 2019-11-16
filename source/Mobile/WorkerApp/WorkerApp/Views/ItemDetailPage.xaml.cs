@@ -28,9 +28,9 @@ namespace WorkerApp.Views
 
         private async void SendUpdate()
         {
-            ApplyCondition();
+            //ApplyCondition();
             UpdateTask();
-            await Navigation.PushAsync(new NewItemPage(new ItemUpdate { item = viewModel.Item }));
+            await Navigation.PushAsync(new NewItemPage(new ItemUpdate { taskId = viewModel.Item.Id, workerid="3" , Status = viewModel.Item.Status, wLatitude = viewModel.Item.WorkerLatitude, wLongitude = viewModel.Item.WorkerLongitude }));
         }
         private void ApplyCondition()
         {

@@ -20,6 +20,8 @@ namespace WorkerApp.Models
         public int Duration { get; set; }
         public String Status { get; set; }
 
+        public String Title { get; set; }
+
         //  public List<TaskUpdate> TaskUpdates { get; set; }
     }
 }
