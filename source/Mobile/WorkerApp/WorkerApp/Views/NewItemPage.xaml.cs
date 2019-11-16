@@ -39,12 +39,12 @@ namespace WorkerApp.Views
         {
             RestAPICaller caller = new RestAPICaller();
             await caller.UpdateTaskAsync(_itemUpdate);
-            await Navigation.PopModalAsync();
+            await Navigation.PopAsync();
         }
 
         private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Navigation.PopAsync();
         }
     }
 }
