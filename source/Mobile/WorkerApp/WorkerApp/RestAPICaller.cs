@@ -14,7 +14,7 @@ namespace WorkerApp
         private string RestUrl;
         public RestAPICaller()
         {
-            RestUrl = "";
+            RestUrl = "https://staraapi.azurewebsites.net";
         }
 
         public async Task<string> UpdateTaskAsync(ItemUpdate itemUpdate)
@@ -45,18 +45,19 @@ namespace WorkerApp
         }
         public async Task<List<Item>> GetTasksAsync(int id)
         {
-            string url = RestUrl + "/api/apisubclass/" + id;
+            string url = RestUrl + "/api/Tasks/" + id;
 
-            List<Item> Items = null;
+            List<Models.Task> TaskItems = null;
+            List<Item> Items = new List<Item>();
 
             //Items = new List<Item>()
             //{
-            //    new Item { Id = Guid.NewGuid().ToString(), Text = "1 item", Description="This is an item description.", Status=TaskStatus.Assigned, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923" },
-            //    new Item { Id = Guid.NewGuid().ToString(), Text = "2 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-            //    new Item { Id = Guid.NewGuid().ToString(), Text = "3 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-            //    new Item { Id = Guid.NewGuid().ToString(), Text = "4 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-            //    new Item { Id = Guid.NewGuid().ToString(), Text = "5 item", Description="This is an item description.", Status=TaskStatus.Started, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
-            //    new Item { Id = Guid.NewGuid().ToString(), Text = "6 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  }
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "1 item", Description="This is an item description.", Status="Assigned", building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923" },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "2 item", Description="This is an item description.", Status="Completed", building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "3 item", Description="This is an item description.", Status="Paused", building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "4 item", Description="This is an item description.", Status="Paused", building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "5 item", Description="This is an item description.", Status="Started", building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  },
+            //    new Item { Id = Guid.NewGuid().ToString(), Text = "6 item", Description="This is an item description.", Status="Completed", building="Building 1", street="street 1", priority="Normal", latitude="60.1883493",longitude="24.8223923"  }
             //};
 
             try
@@ -67,7 +68,24 @@ namespace WorkerApp
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<Item>>(content);
+                    TaskItems = JsonConvert.DeserializeObject<List<Models.Task>>(content);
+
+                    foreach (Models.Task item in TaskItems)
+                    {
+                        Item myItem = new Item();
+                        myItem.Id = Guid.NewGuid().ToString();// item.TaskId.ToString();
+                        myItem.Text = "item";
+                        myItem.Description = "desc";
+                        myItem.latitude = item.Latitude;
+                        myItem.longitude = item.Longitude;
+                        myItem.priority = "Normal";
+                        myItem.Status = item.Status;
+                        myItem.building = item.BuildingName;
+                        myItem.street = item.Streetname;
+
+                        Items.Add(myItem);
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -77,5 +95,7 @@ namespace WorkerApp
 
             return Items;
         }
+
+        
     }
-}
+ }

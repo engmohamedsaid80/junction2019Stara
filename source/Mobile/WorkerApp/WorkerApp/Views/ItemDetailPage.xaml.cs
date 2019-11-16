@@ -36,28 +36,28 @@ namespace WorkerApp.Views
         {
             BindingContext = null;
             BindingContext = this.viewModel;
-            if (viewModel.Item.Status == TaskStatus.Assigned)
+            if (viewModel.Item.Status == "Assigned")
             {
                 btnStart.IsVisible = true;
                 btnPause.IsVisible = false;
                 btnResume.IsVisible = false;
                 btnEnd.IsVisible = false;
             }
-            else if (viewModel.Item.Status == TaskStatus.Started)
+            else if (viewModel.Item.Status == "Started")
             {
                 btnStart.IsVisible = false;
                 btnPause.IsVisible = true;
                 btnResume.IsVisible = false;
                 btnEnd.IsVisible = true;
             }
-            else if (viewModel.Item.Status == TaskStatus.Paused)
+            else if (viewModel.Item.Status == "Paused")
             {
                 btnStart.IsVisible = false;
                 btnPause.IsVisible = false;
                 btnResume.IsVisible = true;
                 btnEnd.IsVisible = false;
             }
-            else if (viewModel.Item.Status == TaskStatus.Completed)
+            else if (viewModel.Item.Status == "Completed")
             {
                 btnStart.IsVisible = false;
                 btnPause.IsVisible = false;
@@ -89,26 +89,26 @@ namespace WorkerApp.Views
 
         private async void btnStart_Clicked(object sender, EventArgs e)
         {
-            viewModel.Item.Status = TaskStatus.Started;
+            viewModel.Item.Status = "Started";
 
             SendUpdate();
         }
 
         private void btnPause_Clicked(object sender, EventArgs e)
         {
-            viewModel.Item.Status = TaskStatus.Paused;
+            viewModel.Item.Status = "Paused";
             SendUpdate();
         }
 
         private void btnEnd_Clicked(object sender, EventArgs e)
         {
-            viewModel.Item.Status = TaskStatus.Completed;
+            viewModel.Item.Status = "Completed";
             SendUpdate();
         }
 
         private void btnResume_Clicked(object sender, EventArgs e)
         {
-            viewModel.Item.Status = TaskStatus.Started;
+            viewModel.Item.Status = "Started";
             SendUpdate();
 
         }

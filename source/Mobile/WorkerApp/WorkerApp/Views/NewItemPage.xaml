@@ -50,15 +50,10 @@
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" 
-<<<<<<< HEAD
-                    Width="500" Header="Notes" PlaceholderText="Write about the Status of the work"/>  
+Placeholder="Write about the Status of the work"/>
             <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Send"></Button>
             <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Skip"></Button>
-=======
-                    Placeholder="Write about the Status of the work"/>  
-            <Button x:Name="btnSave" Clicked="btnSave_Clicked"  Text="Send"></Button>
-            <Button x:Name="btnCancel" Clicked="btnCancel_Clicked"  Text="Cancel"></Button>
->>>>>>> 999774cad3e281ce6aed3336b0ad768c04da9714
+
         </StackLayout>
     </ContentPage.Content>
     
