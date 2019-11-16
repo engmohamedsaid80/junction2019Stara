@@ -12,7 +12,7 @@
             <![CDATA[
             ^contentpage {
                 font-family: "Arial";
-                background-color: #dedfe1;
+                background-color: white;
             }
             .Toolbar {
                 background-color: #0000bf;
@@ -24,6 +24,9 @@
             .Priority {
                 color: #bd2719;
                 text-transform: uppercase;
+            }
+            .SeePictures {
+                color: #0000bf;
             }
             ]]>
         </StyleSheet>
@@ -38,7 +41,6 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
-
         <StackLayout Orientation="Horizontal">
         <Label
         StyleClass="TaskHeader"
@@ -56,16 +58,16 @@
         FontSize="16"
         HorizontalOptions="EndAndExpand"
         />
-        </StackLayout>
+    </StackLayout>
 
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" Spacing="20" Padding="20">
         <Label Text="Description:" FontSize="Medium" />
         <Label Text="{Binding Item.Description}" FontSize="Medium"/>
 
         <Label Text="CONTACT PERSON:" FontSize="Medium" /> 
         <Label Text="PHONE NUMBER:" FontSize="Medium" /> 
 
-        <Label Text="SEE PICTURES" FontSize="Medium" />
+        <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" HorizontalAlignment="Center"/>
 
         <Label Text="Street:" FontSize="Medium" />
         <Label Text="{Binding Item.street}"  FontSize="Small"/>

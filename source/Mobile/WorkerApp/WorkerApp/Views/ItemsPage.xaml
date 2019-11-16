@@ -13,7 +13,7 @@
             <![CDATA[
             ^contentpage {
                 font-family: "Arial";
-                background-color: #dedfe1;
+                background-color: white;
             }
             .Toolbar {
                 background-color: #0000bf;
