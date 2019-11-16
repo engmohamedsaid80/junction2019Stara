@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using WorkerApp.Models;
+using TaskStatus = WorkerApp.Models.TaskStatus;
 
 namespace WorkerApp
 {
@@ -21,21 +22,31 @@ namespace WorkerApp
 
             List<Item> Items = null;
 
-            try
+            Items = new List<Item>()
             {
-                var uri = new Uri(string.Format(url, string.Empty));
-                HttpClient client = new HttpClient();
-                var response = await client.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<Item>>(content);
-                }
-            }
-            catch (Exception ex)
-            {
+                new Item { Id = Guid.NewGuid().ToString(), Text = "1 item", Description="This is an item description.", Status=TaskStatus.Assigned, building="Building 1", street="street 1", priority="Normal" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "2 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "3 item", Description="This is an item description.", Status=TaskStatus.Paused, building="Building 1", street="street 1", priority="Normal" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "4 item", Description="This is an item description.", Status=TaskStatus.Cancelled, building="Building 1", street="street 1", priority="Normal" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "5 item", Description="This is an item description.", Status=TaskStatus.Started, building="Building 1", street="street 1", priority="Normal" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "6 item", Description="This is an item description.", Status=TaskStatus.Completed, building="Building 1", street="street 1", priority="Normal" }
+            };
 
-            }
+            //try
+            //{
+            //    var uri = new Uri(string.Format(url, string.Empty));
+            //    HttpClient client = new HttpClient();
+            //    var response = await client.GetAsync(uri);
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        var content = await response.Content.ReadAsStringAsync();
+            //        Items = JsonConvert.DeserializeObject<List<Item>>(content);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
 
             return Items;
         }
