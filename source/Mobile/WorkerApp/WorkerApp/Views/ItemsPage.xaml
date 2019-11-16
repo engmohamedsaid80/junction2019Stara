@@ -41,15 +41,14 @@
                         <StackLayout Padding="10" Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
                                 <Label
-                                    Class="TaskHeader"
+                                    StyleClass="TaskHeader"
                                     Text="{Binding Text}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="16"
                                     HorizontalOptions="StartAndExpand"
                                     />
-                                <Label 
-                                    Class="TaskStatus"
+                                <Label StyleClass="TaskStatus"
                                     Text="{Binding Status}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
@@ -59,27 +58,27 @@
                             </StackLayout>
 
                             <Label 
-                                Class="TaskDescription"
+                                StyleClass="TaskDescription"
                                 Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
 
                             <Label 
-                                Class="TaskPriority"
+                                StyleClass="TaskPriority"
                                 Text="{Binding priority}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
                             <Label 
-                                Class="TaskBuilding"
+                                StyleClass="TaskBuilding"
                                 Text="{Binding building}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
 
                             <Label 
-                                Class="TaskStreet"
+                                StyleClass="TaskStreet"
                                 Text="{Binding street}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"

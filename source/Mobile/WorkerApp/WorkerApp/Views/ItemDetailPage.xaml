@@ -11,7 +11,32 @@
         <Label Text="Text:" FontSize="Medium" />
         <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
         <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small"/>
+        <Label Text="{Binding Item.Description}"  FontSize="Small"/>
+
+        <Label Text="Status:" FontSize="Medium" />
+        <Label Text="{Binding Item.Status}"  FontSize="Small"/>
+
+        
+        <Label Text="Priority:" FontSize="Medium" />
+        <Label Text="{Binding Item.priority}" FontSize="Small"/>
+
+        <Label Text="Street:" FontSize="Medium" />
+        <Label Text="{Binding Item.street}"  FontSize="Small"/>
+
+        <Label Text="Buidling:" FontSize="Medium" />
+        <Label Text="{Binding Item.building}"  FontSize="Small"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
+                     HorizontalOptions="StartAndExpand"></Button>
+            <Button x:Name="btnPause" Text="Pause" Clicked="btnPause_Clicked"
+                    HorizontalOptions="CenterAndExpand"></Button>
+            <Button x:Name="btnResume" Text="Resume" Clicked="btnResume_Clicked"
+                    HorizontalOptions="CenterAndExpand"></Button>
+            <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
+                    HorizontalOptions="EndAndExpand"></Button>
+        </StackLayout>
+        
     </StackLayout>
     
 </ContentPage>
