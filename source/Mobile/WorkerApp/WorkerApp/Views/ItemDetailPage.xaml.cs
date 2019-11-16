@@ -22,17 +22,42 @@ namespace WorkerApp.Views
 
             BindingContext = this.viewModel = viewModel;
             _item = item;
+            ApplyCondition();
 
-            //if (_item.Status == TaskStatus.Assigned)
-            //{ btnStart btnPause btnResume}
-            //else if (_item.Status == TaskStatus.Started)
-            //{ }
-            //else if (_item.Status == TaskStatus.Paused)
-            //{ }
-            //else if (_item.Status == TaskStatus.Completed)
-            //{ }
+
         }
 
+        private void ApplyCondition()
+        {
+            if (_item.Status == TaskStatus.Assigned)
+            {
+                btnStart.IsVisible = true;
+                btnPause.IsVisible = false;
+                btnResume.IsVisible = false;
+                btnEnd.IsVisible = false;
+            }
+            else if (_item.Status == TaskStatus.Started)
+            {
+                btnStart.IsVisible = false;
+                btnPause.IsVisible = true;
+                btnResume.IsVisible = false;
+                btnEnd.IsVisible = true;
+            }
+            else if (_item.Status == TaskStatus.Paused)
+            {
+                btnStart.IsVisible = false;
+                btnPause.IsVisible = false;
+                btnResume.IsVisible = true;
+                btnEnd.IsVisible = false;
+            }
+            else if (_item.Status == TaskStatus.Completed)
+            {
+                btnStart.IsVisible = false;
+                btnPause.IsVisible = false;
+                btnResume.IsVisible = false;
+                btnEnd.IsVisible = false;
+            }
+        }
         public ItemDetailPage()
         {
             InitializeComponent();
@@ -51,22 +76,30 @@ namespace WorkerApp.Views
 
         private void btnStart_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Start", "Start clicked", "OK");
+            //DisplayAlert("Start", "Start clicked", "OK");
+            _item.Status = TaskStatus.Started;
+            ApplyCondition();
         }
 
         private void btnPause_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Pause", "Pause clicked", "OK");
+            //DisplayAlert("Pause", "Pause clicked", "OK");
+            _item.Status = TaskStatus.Paused;
+            ApplyCondition();
         }
 
         private void btnEnd_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("End", "End clicked", "OK");
+           // DisplayAlert("End", "End clicked", "OK");
+            _item.Status = TaskStatus.Completed;
+            ApplyCondition();
         }
 
         private void btnResume_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Resume", "Resume clicked", "OK");
+            //DisplayAlert("Resume", "Resume clicked", "OK");
+            _item.Status = TaskStatus.Started;
+            ApplyCondition();
         }
     }
 }

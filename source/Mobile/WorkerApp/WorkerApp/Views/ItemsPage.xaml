@@ -20,22 +20,17 @@
             }
             .TaskHeader {
                 color: #bd2719;
-                font-size: 10px;
                 text-transform: uppercase;
             }
             .TaskStatus {
                 color: #bd2719;
-                font-size: 10px;
                 text-transform: uppercase;
             }
             .TaskDescription {
-                font-size: 12px;
                 font-color: black;
             }
             #ItemsListView {
-                height: 50px;
                 background-color: white;
-                border-bottom: 1px; 
                 border-color: #abb2bd;
             }
             ]]>
@@ -43,8 +38,8 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-          <ToolbarItem 
-                StyleClass="Toolbar"    
+        <ToolbarItem
+                     
                 Text="Example Item"
                 IconImageSource="stara.png"
                 Order="Primary"
