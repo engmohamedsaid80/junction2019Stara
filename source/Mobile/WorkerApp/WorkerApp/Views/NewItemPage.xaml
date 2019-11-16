@@ -6,11 +6,7 @@
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.NewItemPage"
              Title="New Item">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
-    </ContentPage.ToolbarItems>
+   
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
@@ -18,6 +14,8 @@
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Button x:Name="btnSave" Clicked="btnSave_Clicked"  Text="Send"></Button>
+            <Button x:Name="btnCancel" Clicked="btnCancel_Clicked"  Text="Cancel"></Button>
         </StackLayout>
     </ContentPage.Content>
     
