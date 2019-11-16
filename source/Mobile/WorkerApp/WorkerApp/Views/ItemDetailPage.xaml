@@ -20,10 +20,12 @@
            .TaskHeader {
                 color: #bd2719;
                 text-transform: uppercase;
+                font-weight: bold;
             }
             .Priority {
                 color: #bd2719;
                 text-transform: uppercase;
+                font-weight: bold;
             }
             .SeePictures {
                 color: #0000bf;
@@ -39,9 +41,10 @@
                         Order="Primary"
                         Priority="0" />
             </ContentPage.ToolbarItems>
+
     <StackLayout Orientation="Vertical" Spacing="20" Padding="15">
-        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  Spacing="20" Padding="15">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  Spacing="20" Padding="15">
+        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  Spacing="20">
+            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand"  Spacing="20" Padding="15">
                 <Label
                 StyleClass="TaskHeader"
                 Text="{Binding Item.Text}" 
@@ -51,8 +54,8 @@
                 HorizontalOptions="StartAndExpand"
             />
                 <Label 
-                StyleClass="Priority"
-                Text="{Binding Item.priority}" 
+                StyleClass="Status"
+                Text="{Binding Item.Status}" 
                 LineBreakMode="NoWrap" 
                 Style="{DynamicResource ListItemTextStyle}" 
                 FontSize="16"
@@ -60,8 +63,7 @@
             />
             </StackLayout>
 
-            <Label Text="Description:" FontSize="Medium" />
-            <Label Text="{Binding Item.Description}" FontSize="Medium"/>
+            <Label Text="Description comes here" FontSize="Medium" /><Label Text="{Binding Item.Description}" FontSize="Medium"/>
 
             <Label Text="CONTACT PERSON:" FontSize="Medium" />
             <Label Text="PHONE NUMBER:" FontSize="Medium" />
@@ -69,7 +71,7 @@
             <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" HorizontalOptions="Center"/>
 
             <Label Text="Street:" FontSize="Medium" />
-            <Label Text="{Binding Item.street}"  FontSize="Small"/>
+            <Label Text="{Binding Item.street}"  FontSize="Medium"/>
 
             <Label Text="Buidling:" FontSize="Medium" />
             <Label Text="{Binding Item.building}"  FontSize="Small"/>
@@ -80,6 +82,7 @@
                         <TapGestureRecognizer Tapped="btnMap_Clicked"  />
                     </Image.GestureRecognizers>
                 </Image>
+
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
