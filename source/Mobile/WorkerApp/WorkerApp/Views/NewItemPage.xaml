@@ -35,11 +35,9 @@
             ]]>
         </StyleSheet>
     </ContentPage.Resources>
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
-         <ToolbarItem
+        <ToolbarItem
                 Text="Example Item"
                 IconImageSource="stara.png"
                 Order="Primary"
@@ -52,7 +50,7 @@
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" 
-                    Width="500" Header="Notes" PlaceholderText="Write about the Status of the work"/>  
+                    Placeholder="Write about the Status of the work"/>  
             <Button x:Name="btnSave" Clicked="btnSave_Clicked"  Text="Send"></Button>
             <Button x:Name="btnCancel" Clicked="btnCancel_Clicked"  Text="Cancel"></Button>
         </StackLayout>

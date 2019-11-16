@@ -90,5 +90,6 @@
             <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
         </StackLayout>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
