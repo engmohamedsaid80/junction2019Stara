@@ -63,8 +63,7 @@
             />
             </StackLayout>
 
-            <Label Text="Description:" FontSize="Medium" />
-            <Label Text="{Binding Item.Description}" FontSize="Medium"/>
+            <Label Text="Description comes here" FontSize="Medium" /><Label Text="{Binding Item.Description}" FontSize="Medium"/>
 
             <Label Text="CONTACT PERSON:" FontSize="Medium" />
             <Label Text="PHONE NUMBER:" FontSize="Medium" />
@@ -83,6 +82,7 @@
                         <TapGestureRecognizer Tapped="btnMap_Clicked"  />
                     </Image.GestureRecognizers>
                 </Image>
+
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
