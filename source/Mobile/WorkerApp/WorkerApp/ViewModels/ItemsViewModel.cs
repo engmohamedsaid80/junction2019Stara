@@ -29,7 +29,7 @@ namespace WorkerApp.ViewModels
             });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async System.Threading.Tasks.Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;

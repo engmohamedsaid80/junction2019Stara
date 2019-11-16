@@ -19,7 +19,7 @@ namespace WorkerApp.Services
         {
             items.Add(item);
 
-            return await Task.FromResult(true);
+            return await System.Threading.Tasks.Task.FromResult(true);
         }
 
         public async Task<bool> UpdateItemAsync(Item item)
@@ -28,7 +28,7 @@ namespace WorkerApp.Services
             items.Remove(oldItem);
             items.Add(item);
 
-            return await Task.FromResult(true);
+            return await System.Threading.Tasks.Task.FromResult(true);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
@@ -36,24 +36,24 @@ namespace WorkerApp.Services
             var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
             items.Remove(oldItem);
 
-            return await Task.FromResult(true);
+            return await System.Threading.Tasks.Task.FromResult(true);
         }
 
         public async Task<Item> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await System.Threading.Tasks.Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
         private async void GetItems()
         {
             RestAPICaller restCaller = new RestAPICaller();
 
-            items = await restCaller.GetTasksAsync(1);
+            items = await restCaller.GetTasksAsync(3);
         }
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
-            
-            return await Task.FromResult(items);
+            GetItems();
+            return await System.Threading.Tasks.Task.FromResult(items);
         }
     }
 }

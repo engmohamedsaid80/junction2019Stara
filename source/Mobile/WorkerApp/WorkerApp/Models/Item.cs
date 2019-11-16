@@ -9,7 +9,7 @@ namespace WorkerApp.Models
         public string Text { get; set; }
         public string Description { get; set; }
 
-        public TaskStatus Status { get; set; }
+        public String Status { get; set; }
 
         public string priority { get; set; }
         public string building { get; set; }
@@ -22,5 +22,7 @@ namespace WorkerApp.Models
         public string WorkerLatitude { get; set; }
 
         public string WorkerLongitude { get; set; }
+
+        
     }
 }
