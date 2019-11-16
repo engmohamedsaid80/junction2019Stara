@@ -39,7 +39,6 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-                     
                 Text="Example Item"
                 IconImageSource="stara.png"
                 Order="Primary"

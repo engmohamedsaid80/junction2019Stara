@@ -6,6 +6,32 @@
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.ItemDetailPage"
              Title="{Binding Title}">
+     
+     <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: #dedfe1;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+            #btnStart {
+                background-color: #0072c6;
+                color: white;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
+    </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Text:" FontSize="Medium" />
@@ -16,7 +42,6 @@
         <Label Text="Status:" FontSize="Medium" />
         <Label Text="{Binding Item.Status}"  FontSize="Small"/>
 
-        
         <Label Text="Priority:" FontSize="Medium" />
         <Label Text="{Binding Item.priority}" FontSize="Small"/>
 
@@ -34,9 +59,7 @@
             <Button x:Name="btnResume" Text="Resume" Clicked="btnResume_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
             <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"
-                    HorizontalOptions="EndAndExpand"></Button>
+                    HorizontalOptions="EndAndExpand"></Button>     
         </StackLayout>
-        
     </StackLayout>
-    
 </ContentPage>

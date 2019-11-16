@@ -6,10 +6,44 @@
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.NewItemPage"
              Title="New Item">
+     
+     <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: #dedfe1;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+            .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskStatus {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskDescription {
+                font-color: black;
+            }
+            #ItemsListView {
+                background-color: white;
+                border-color: #abb2bd;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+         <ToolbarItem
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -17,7 +51,8 @@
             <Label Text="Text" FontSize="Medium" />
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />  
+            <TextBox Width="500" Header="Notes" PlaceholderText="Write about the Status of the work"/>
         </StackLayout>
     </ContentPage.Content>
     
