@@ -28,7 +28,7 @@
                 text-transform: uppercase;
             }
             .TaskDescription {
-                font-color: black;
+                color: #abb2bd;
             }
             #ItemsListView {
                 background-color: white;
@@ -59,8 +59,8 @@
         <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="15" Orientation="Vertical" Margin="2">
-                            <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" Margin="2">
+                            <StackLayout Padding="15" Orientation="Horizontal">
                                 <Label
                                     StyleClass="TaskHeader"
                                     Text="{Binding Text}" 
@@ -84,27 +84,31 @@
                                 Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16" />
+                                FontSize="16"
+                                Padding="20"  />
 
                             <Label 
                                 StyleClass="TaskPriority"
                                 Text="{Binding priority}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16" />
+                                FontSize="16"
+                                Padding="20" />
                             <Label 
                                 StyleClass="TaskBuilding"
                                 Text="{Binding building}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16" />
+                                FontSize="16"
+                                Padding="20" />
 
                             <Label 
                                 StyleClass="TaskStreet"
                                 Text="{Binding street}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16" />
+                                FontSize="16"
+                                Padding="20" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
