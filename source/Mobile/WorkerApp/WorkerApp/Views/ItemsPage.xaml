@@ -12,17 +12,43 @@
         <StyleSheet>
             <![CDATA[
             ^contentpage {
-                background-color: lightgray;
+                font-family: "Arial";
+                background-color: #dedfe1;
+            }
+            .Toolbar {
+                background-color: #0000bf;
             }
             .TaskHeader {
-                color: Green;
+                color: #bd2719;
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            .TaskStatus {
+                color: #bd2719;
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            .TaskDescription {
+                font-size: 12px;
+                font-color: black;
+            }
+            #ItemsListView {
+                height: 50px;
+                background-color: white;
+                border-bottom: 1px; 
+                border-color: #abb2bd;
             }
             ]]>
         </StyleSheet>
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <!--<ToolbarItem Text="Add" Clicked="AddItem_Clicked" />-->
+          <ToolbarItem 
+                StyleClass="Toolbar"    
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>
@@ -48,12 +74,13 @@
                                     FontSize="16"
                                     HorizontalOptions="StartAndExpand"
                                     />
-                                <Label StyleClass="TaskStatus"
+                                <Label 
+                                    StyleClass="TaskStatus"
                                     Text="{Binding Status}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="16"
-                                       HorizontalOptions="EndAndExpand"
+                                    HorizontalOptions="EndAndExpand"
                                     />
                             </StackLayout>
 
