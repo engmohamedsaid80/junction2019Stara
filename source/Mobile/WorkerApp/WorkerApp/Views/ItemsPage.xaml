@@ -66,7 +66,7 @@
                                     Text="{Binding Text}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="24"
+                                    FontSize="16"
                                     HorizontalOptions="StartAndExpand"
                                     />
                                 <Label 
@@ -74,7 +74,7 @@
                                     Text="{Binding Status}" 
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="24"
+                                    FontSize="16"
                                     HorizontalOptions="EndAndExpand"
                                     />
                             </StackLayout>
