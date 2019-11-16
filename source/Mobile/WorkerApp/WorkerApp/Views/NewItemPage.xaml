@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.NewItemPage"
-             Title="New Item">
+             Title="Update Task">
      
      <ContentPage.Resources>
         <StyleSheet>
@@ -53,8 +53,8 @@
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" 
                     Width="500" Header="Notes" PlaceholderText="Write about the Status of the work"/>  
-            <Button x:Name="btnSave" Clicked="btnSave_Clicked"  Text="Send"></Button>
-            <Button x:Name="btnCancel" Clicked="btnCancel_Clicked"  Text="Cancel"></Button>
+            <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Send"></Button>
+            <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Skip"></Button>
         </StackLayout>
     </ContentPage.Content>
     
