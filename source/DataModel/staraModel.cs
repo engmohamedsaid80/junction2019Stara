@@ -43,7 +43,10 @@ public class Task {
     
     [Key]
     public int TaskId { get; set; }
+    
     public Worker Worker { get; set; }
+
+    public String Description { get; set; } 
     public String Streetname { get; set; }
     public String BuildingName { get; set; }
     public String Longitude { get; set; }
@@ -60,10 +63,11 @@ public class Project {
 
     [Key]
     public int ProjectId { get; set; }
-    public String Longitude { get; set; }
-    public String Latitude { get; set; }
+    public String Description { get; set; }
     public String Streetname { get; set; }
     public String BuildingName { get; set; }
+    public String Longitude { get; set; }
+    public String Latitude { get; set; }
     public String Urgency { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndTime { get; set; }
@@ -85,7 +89,7 @@ public class TaskUpdate {
 public class Feedback {
     public Project Project { get; set; }
 
-    public int Description { get; set; }
+    public String Description { get; set; }
 }
 
 public class Skill {
