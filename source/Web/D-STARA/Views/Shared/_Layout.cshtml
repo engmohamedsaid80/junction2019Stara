@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - STARA</title>
+
+    @*<environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+                  crossorigin="anonymous"
+                  integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
+
+        </environment>*@
+
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+    <link href="~/STARA/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <link href="~/STARA/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/icheck.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/datatables.min.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/nanoscroller.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/mainEn.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/taggle.min.css" rel="stylesheet" type="text/css">
+    <link href="~/STARA/css/taggle.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" media="all" href="~/STARA/css/c3.min.css">
+
+
+    <script type="text/javascript" src="~/STARA/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/icheck.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/loadingoverlay.js"></script>
+    <script type="text/javascript" src="~/STARA/js/datatables.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/dataTables.bootstrap4.js"></script>
+    <script type="text/javascript" src="~/STARA/js/taggle.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/jquery.nanoscroller.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/scripts.js"></script>
+
+    <script type="text/javascript" src="~/STARA/js/d3.min.js"></script>
+    <script type="text/javascript" src="~/STARA/js/c3.min.js"></script>
+
+
+</head>
+<body class="internal">
+    <header id="portalHider">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">D-STARA</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Workers">Workers</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                        </li>
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="AdminUsers" asp-action="ManageSecurity">User Settings</a>
+        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header"> <img class="avatar" src="~/STARA/images/STARA_ICON2.png" alt="" style="width:200px;height:auto"> </div>
+            <ul class="list-unstyled components">
+                <li class="active" id="InitalActivetab"> <a href="/"> <i class="fas fa-home"></i> Home </a> </li>
+                <li id="Services"> <a href="/Home/Workers"> <i class="fas fa-image"></i> Workers </a></li>
+                <li id="Services"> <a href="/Home/Dashboard"> <i class="fas fa-image"></i> Dashbooard </a></li>
+                <!--
+        <li id="Dialects"><a href="/Dialects/DialectsListing"> <i class="fas fa-copy"></i> Arabic Dialects </a> </li>
+        <li id="Reports"> <a asp-area="" asp-controller="Report" asp-action="ReportList"> <i class="fas fa-image"></i> Reports </a> </li>
+        <li id="Locations"> <a asp-area="" asp-controller="Location" asp-action="BranchesList"> <i class="fas fa-map-marker-alt"></i> Locations </a> </li>
+
+        <li id="Configuration"> <a asp-area="" asp-controller="Configuration" asp-action="PortalConfiguration"> <i class="fas fa-paper-plane"></i> Portal Configuration </a> </li>
+        <li id="Messages"> <a asp-area="" asp-controller="Message" asp-action="MessageList"> <i class="fas fa-copy"></i> Messages </a> </li>
+        <li id="Complaints"> <a asp-area="" asp-controller="ComplaintRequest" asp-action="ServicesList"> <i class="fas fa-list"></i> Complaints / Requests </a> </li>
+        <li id="TokenUsers"> <a asp-area="" asp-controller="TokenUsers" asp-action="UsersList"> <i class="fas fa-user-lock"></i> Bot Security Users </a> </li>
+        <li id="AdminUsers"> <a asp-area="" asp-controller="AdminUsers" asp-action="ManageSecurity"> <i class="fas fa-user-lock"></i> Admin Security </a> </li>
+        <li id="ErrorLog"><a href="/Error/ErrorListing"><i class="fas fa-exclamation-triangle"></i> Errors Log </a> </li>
+    -->
+            </ul>
+            
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="container">
+                @*<partial name="_CookieConsentPartial" />*@
+                <main role="main" class="pb-3">
+                    @RenderBody();
+
+                </main>
+            </div>
+
+        </div>
+
+
+
+        @*<environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=">
+            </script>
+        </environment>*@
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+
+        @*<script type="text/javascript" src="~/STARA/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="~/STARA/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/STARA/js/icheck.min.js"></script>
+        <script type="text/javascript" src="~/STARA/js/loadingoverlay.js"></script>
+        <script type="text/javascript" src="~/STARA/js/datatables.min.js"></script>
+        <script type="text/javascript" src="~/STARA/js/dataTables.bootstrap4.js"></script>
+        <script type="text/javascript" src="~/STARA/js/scripts.js"></script>*@
+    </div>
+    @RenderSection("Footer", required: false)
+    <footer class="border-top footer text-muted" id="footer_layout">
+       
+
+        <div class="row mt-3">
+            <p class="pweredBy"><strong>Powered by</strong> <img src="~/STARA/images/STARA_ICON.png" alt="STARA"></p>
+        </div>
+    </footer>
+
+
+    @RenderSection("Scripts", required: false)
+
+    @RenderSection("HiddenFields", required: false)
+
+</body>
+</html>
+
+
+
+
+    <script>
+     
+        //Changing the active tab 
+        @ViewBag.UpdatingSelectedTab
+        function UpdatingSelectedTab() {
+            $('li').removeClass("active");
+           var ViewBagValue = "@ViewBag.SelectedTab";
+            if (ViewBagValue == "Services") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "Dialects") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "Locations") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "Configuration") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "Messages") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "Complaints") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "Reports") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "ErrorLog") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "TokenUsers") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else if (ViewBagValue == "LocationMap") {
+                $("#sidebar").hide();
+                $("#portalHider").hide();
+            }
+            else if (ViewBagValue == "ErrorLog_Reports") {
+                $("#sidebar").hide();
+                $("#portalHider").hide();
+                $("#footer_layout").hide();
+            }
+            else if (ViewBagValue == "AdminUsers") {
+                $("#" + ViewBagValue).addClass("active");
+            }
+            else {
+                $("#InitalActivetab").addClass("active");
+            }
+        }
+
+       
+    </script>
+
