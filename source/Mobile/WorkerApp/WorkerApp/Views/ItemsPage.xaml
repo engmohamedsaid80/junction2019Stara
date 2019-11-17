@@ -55,40 +55,41 @@
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
+                ItemSelected="OnItemSelected"
+                margin="6">
         <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical" Margin="5">
+                        <StackLayout Orientation="Vertical">
                             <StackLayout Padding="15" Orientation="Horizontal">
                                 <Label
                                     StyleClass="TaskHeader"
                                     Text="{Binding Text}" 
-                                    
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="16"
+                                    FontSize="18"
                                     HorizontalOptions="StartAndExpand"
+                                    FontAttributes="Bold"
                                     />
+                                <Label 
+                                    Text="{Binding priority}" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    StyleClass="TaskPriority"
+                                    FontSize="18"
+                                    HorizontalOptions="center"
+                                    />    
                                 <Label 
                                     StyleClass="TaskStatus"
                                     Text="{Binding Status}" 
-                                    
                                     Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="16"
+                                    FontSize="18"
                                     HorizontalOptions="EndAndExpand"
+                                    FontAttributes="Bold"
                                     />
                             </StackLayout>
 
                             <Label 
                                 StyleClass="TaskDescription"
                                 Text="{Binding Description}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16" />
-
-                            <Label 
-                                StyleClass="TaskPriority"
-                                Text="{Binding priority}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="16" />

@@ -1,0 +1,425 @@
+﻿@model IEnumerable<StaraDomainModels.Model.Worker>
+@{
+    ViewData["Title"] = "Workers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript" charset="utf-8">
+
+    var map;
+
+    var myLat = 60;
+    var myLong = 24;
+
+    function ginitialize() {
+
+        var myLatlng = new google.maps.LatLng(60, 24);
+        var myOptions = {
+            zoom: 10, center: myLatlng, panControl: false, mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+
+        // var infoWindow = new google.maps.InfoWindow({ map: map });
+        if (navigator.geolocation) {
+
+            // loadBranches(32, 36);
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+
+                };
+
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    title: 'My Current Location!',
+                    icon: '/STARA/images/currentlocation.png'
+                });
+
+                // infoWindow.setPosition(pos);
+                // infoWindow.setContent('Location found.');
+                map.setCenter(pos);
+                map.setZoom(10);
+
+                myLat = pos.lat;
+                myLong = pos.lng;
+
+                //populate districts dropdown
+
+
+                loadBranches(pos.lat, pos.lng);
+
+
+            }, function () {
+                loadBranches(60, 24);
+                handleLocationError(true, "", map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            //alert("*****");
+            loadBranches(60, 24);
+            handleLocationError(false, "", map.getCenter());
+        }
+
+
+        function handleLocationError(browserHasGeolocation, error, pos) {
+
+        }
+
+
+    }
+
+</script>
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+    var rad = function (x) {
+        return x * Math.PI / 180;
+    };
+
+    // calculates the distance between two locations in meters
+    var getDistance = function (pLat1, pLong1, pLat2, pLong2) {
+        var R = 6378137; // Earth’s mean radius in meter
+        var dLat = rad(pLat2 - pLat1);
+        var dLong = rad(pLong2 - pLong1);
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(rad(pLat1)) * Math.cos(rad(pLat2)) *
+            Math.sin(dLong / 2) * Math.sin(dLong / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var d = R * c;
+        return d; // returns the distance in meter
+    };
+
+    var iw;
+    var gmarkers = [];
+
+    var longitudes1 = [];
+    var latitudes1 = [];
+    var locAddress1 = [];
+    var locDesc1 = [];
+    var locRegion1 = [];
+    var locNames1 = [];
+    var locPhones1 = [];
+
+
+
+    function markerClick(i) {
+        google.maps.event.trigger(gmarkers[i], "click");
+    }
+
+
+    function setBranches(longs, lats, address, descriptions, regions, names, phones) {
+
+
+        try {
+            longitudes1 = JSON.parse(longs);
+            latitudes1 = JSON.parse(lats);
+            locRegion1 = JSON.parse(regions);
+            locNames1 = JSON.parse(names);
+            locPhones1 = JSON.parse(phones);
+        } catch (e) {
+
+        }
+
+        try {
+            locAddress1 = JSON.parse(address);
+        } catch (e) {
+
+        }
+
+        try {
+            locDesc1 = JSON.parse(descriptions);
+        } catch (e) {
+
+        }
+    }
+
+    //add branches locations on the map
+    function loadBranches(curLat, curLong) {
+
+        //var branches = "@ViewBag.Branches";
+
+       // alert("length: " + branches);
+
+        $("#branchList").empty();
+        hideMarkers(map, gmarkers);
+        map.setZoom(10);
+
+        var sortedLocations = [];
+
+        var longitudes = [];// = longitudes1;
+        var latitudes = [];//latitudes1;
+        var locAddress = [];//locAddress1;
+        var locDesc = [];//locDesc1;
+        var locRegion = [];//locRegion1;
+        var locName = [];//locNames1;
+        var locPhone = [];//locPhones1;
+
+        var startDate = [];//locPhones1;
+        var endDate = [];//locPhones1;
+
+
+
+        //var myArray = [];
+          @foreach (var m in Model)
+          {
+                @:locName.push(["@Html.Raw(m.Name)"]);
+                @:longitudes.push(["@m.Longitude"]);
+                @:latitudes.push(["@m.Latitude"]);
+                @:locAddress.push(["@m.Status"]);
+                @:locDesc.push(["@m.Hours"]);
+               // @:locRegion.push(["@m.BotLocation_Filters_Lvl_3Id"]);
+                @:locPhone.push(["@m.Hours"]);
+
+         //@:startDate.push(["@m.StartDate"]);
+       //  @:endDate.push(["@m.EndTime"]);
+
+
+          }
+        //alert("length: " + longitudes.length);
+
+        var infoWindowContent = [];
+        var mr = [];
+       // alert("2");
+        for (i = 0; i < longitudes.length; i++) {
+            //if ($('.ddlRegionArea').find(":selected").text() == 'All') {
+
+                var distance = getDistance(myLat, myLong, latitudes[i], longitudes[i]); //curLat, curLong
+
+            sortedLocations.push([distance, latitudes[i], longitudes[i], locAddress[i], locDesc[i], locRegion[i], locName[i], locPhone[i]]);
+           // }
+           // else {
+             //   splittedValues = $('.ddlRegionArea').find(":selected").val().split('-');
+                //if (splittedValues[0] == locRegion[i]) {
+                  //  var distance = getDistance(myLat, myLong, latitudes[i], longitudes[i]);
+                //    sortedLocations.push([distance, latitudes[i], longitudes[i], locAddress[i], locDesc[i], locRegion[i], locName[i], locPhone[i]]);
+              //  }
+            //}
+            //sortedLocations.push([distance, latitudes[i], longitudes[i], locAddress[i], locDesc[i], locRegion[i], locName[i], locPhone[i]]);
+        }
+
+        sortedLocations.sort(function (a, b) { return (a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0)); });
+       // alert("3");
+        for (i = 0; i < sortedLocations.length; i++) {
+
+            mr[i] = new google.maps.Marker({ position: new google.maps.LatLng(sortedLocations[i][1], sortedLocations[i][2]), map: map, icon: '/STARA/images/worker.png', title: sortedLocations[i][3].toString() });
+
+            google.maps.event.addListener(mr[i], 'click', function () {
+
+                var infoWindow = '<div class="branchTooltip" style="overflow: hidden" >' +
+                    '<p>' + this.getTitle() + '</p> </div>';
+
+                map.setZoom(14);
+                map.setCenter(this.getPosition());
+                if (iw) iw.close();
+                iw = new google.maps.InfoWindow({
+                    content: infoWindow,
+                    maxWidth: 350
+                });
+                iw.open(map, this);
+
+
+                google.maps.event.addListener(iw, 'domready', function () {
+
+                    // Reference to the DIV that wraps the bottom of infowindow
+                    var iwOuter = $('.gm-style-iw');
+
+                    iwOuter.css({ 'background-color': '#046d5a !important', 'overflow': 'hidden' });
+
+                    //iwOuter.parent().css({ 'background-color': '#046d5a !important', 'overflow': 'hidden' });
+
+                    var iwBackground = iwOuter.prev();
+                    // Removes white background DIV
+                    iwBackground.children(':nth-child(4)').css({ 'display': 'none', 'overflow': 'hidden', 'background-color': '#046d5a !important ' });
+
+                    /* Since this div is in a position prior to .gm-div style-iw.
+                     * We use jQuery and create a iwBackground variable,
+                     * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
+                    */
+
+
+                });
+
+
+
+            });
+            gmarkers.push(mr[i]);
+
+            var link = '<div class="branchWrapper"><a href="javascript:markerClick(' + i + ');" Id=' + i + '><h3>Name:' + sortedLocations[i][6] +
+                '</h3><p>Status: ' + sortedLocations[i][3] + '</p><br/> <br/>' +
+                '<span class="locationIcon glyphicon glyphicon-map-marker"></span></a> ' +
+                '<dl><dt>' + 'Hours: 15</dt><dd>' + sortedLocations[i][7] + '</dd> </dl><br/> <br/>' +
+                
+                ' <dl><dt> <a href="https://www.google.com.sa/maps/&#64;' + sortedLocations[i][1] + ',' + sortedLocations[i][2] + ',15z" target="_blank">' + 'Navigate </a> </dl></dt></div>';
+
+           $("#branchList").append(link);
+        }
+
+        //alert("Sorted locations: " + sortedLocations.length);
+
+
+    }
+
+
+    function hideMarkers(map, markers) {
+        /* Remove All Markers */
+        while (markers.length) {
+            markers.pop().setMap(null);
+        }
+    }
+
+
+    @*$(document).ready(function () {
+        if ("@ViewBag.Cities" == 0)
+            $("#ddlCityArea").hide();
+        else
+            $("#ddlCityArea").show();
+
+        if ("@ViewBag.Countries" == 0)
+            $("#ddlCountryArea").hide();
+        else
+            $("#ddlCountryArea").show();
+
+
+    });*@
+
+
+
+
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcrO1KxCsPo3HkqADuROutVeeJzzRzqIo&callback=ginitialize">
+</script>
+@section Scripts {
+    <script>
+        //Filter Cities by Country
+        document.getElementById("CountryName").addEventListener("change", function (e) {
+            var country = document.getElementById("CountryName");
+            var selectedcountryname = country.options[country.selectedIndex].text;
+            var selectedcountry = country.options[country.selectedIndex].value;
+            var cities = document.getElementById("CityName");
+            var citycount = document.getElementById("CityName").options.length;
+            if (selectedcountryname != "All") {
+
+                for (var i = 0; i < citycount; i++) {
+                    splittedValues = cities.options[i].value.split('-');
+                    if (splittedValues[1] == selectedcountry) {
+                        cities[i].style.display = "block";
+                    }
+                    else {
+                        cities[i].style.display = "none";
+                    }
+
+                }
+            }
+            else {
+                for (var i = 0; i < citycount; i++) {
+                    cities[i].style.display = "block";
+                }
+            }
+
+        }, false);
+
+        //Filter Districts By City
+        document.getElementById("CityName").addEventListener("change", function (e) {
+            var city = document.getElementById("CityName");
+            var selectedcityname = city.options[city.selectedIndex].text;
+            var selectedcity = city.options[city.selectedIndex].value;
+            splittedValuesCity = selectedcity.split('-');
+            var districts = document.getElementById("DistrictName");
+            var districtcount = document.getElementById("DistrictName").options.length;
+            if (selectedcityname != "All") {
+
+                for (var i = 0; i < districtcount; i++) {
+                    splittedValues = districts.options[i].value.split('-');
+                    if (splittedValues[1] == splittedValuesCity[0]) {
+                        districts[i].style.display = "block";
+                    }
+                    else {
+                        districts[i].style.display = "none";
+                    }
+
+                }
+            }
+            else {
+                for (var i = 0; i < districtcount; i++) {
+                    districts[i].style.display = "block";
+                }
+            }
+
+        }, false);
+    </script>
+}
+
+
+
+<div class="mapWrapper">
+    <div class="filterWrapper">
+        <div class="row">
+            @*<div class="col-lg-4 col-md-4 col-sm-12">
+                    <label class="inputLabel">Country</label>
+                    <select class="dropdown">
+                        <option>Country</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <label class="inputLabel">City</label>
+                    <select class="dropdown">
+                        <option>City</option>
+                    </select>
+                </div>*@
+
+            @*@{ if (ViewBag.Countriescount != 0)
+                    {
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <label class="inputLabel">Country</label>
+                            @Html.DropDownList("ddlCountryArea", ((List<ChatbotDomainModel.Models.Location.BotLocationFilterslvl1>)ViewBag.Countries).Select(m => new SelectListItem { Text = m.Name_En, Value = m.Id.ToString() }), "All", new { id = "CountryName", @class = "ddlCountryArea dropdown" })
+                        </div>
+                    }
+
+                }*@
+
+
+            @*@{ if (ViewBag.Citiescount != 0)
+                    {
+
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <label class="inputLabel">City</label>
+                            @Html.DropDownList("ddlCityArea", ((List<ChatbotDomainModel.Models.Location.BotLocationFilterslvl2>)ViewBag.Cities).Select(m => new SelectListItem { Text = m.Name_En, Value = m.Id.ToString() + "-" + m.BotLocation_Filters_Lvl_1Id }), "All", new { id = "CityName", @class = "ddlCityArea dropdown" })
+                        </div>
+                    }
+                }*@
+
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <label class="inputLabel">Workers</label>
+                @*@Html.DropDownList("ddlRegionArea", ((List<ChatbotDomainModel.Models.Location.BotLocationFilterslvl3>)ViewBag.Districts).Select(m => new SelectListItem { Text = m.Name_En, Value = m.Id.ToString() + "-" + m.BotLocation_Filters_Lvl_2Id }), "All", new { id = "DistrictName", @class = "ddlRegionArea dropdown", onchange = "loadBranches(32, 36)" })*@
+
+            </div>
+
+        </div>
+    </div>
+    @*<iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>*@
+
+    <div class="branchList">
+        <div class="nano">
+            <div class="nano-content" id="branchList">
+
+                <div class="branchWrapper">
+
+                </div>
+            </div>
+        </div>
+    </div>;
+    <div id="map_canvas" class="map" style="width:100%;height:850px; position:relative;top:0;left:0;z-index:1"></div>
+</div>
+
+
+
+
+
