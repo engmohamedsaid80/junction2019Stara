@@ -19,6 +19,7 @@ namespace WorkerApp.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
+        Item _selectedItem;
 
         public ItemsPage()
         {
@@ -33,16 +34,18 @@ namespace WorkerApp.Views
             if (item == null)
                 return;
 
+            _selectedItem = item;
+
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
+        //async void AddItem_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+        //}
 
         protected override void OnAppearing()
         {

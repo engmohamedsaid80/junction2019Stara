@@ -13,7 +13,7 @@
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#0000bf</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
@@ -29,16 +29,13 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- Your Pages -->
+     
     <TabBar>
-        <Tab Title="Browse" Icon="tab_feed.png">
+        <Tab Title="My Tasks" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
-        <Tab Title="About" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
     </TabBar>
-
+    
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.
 

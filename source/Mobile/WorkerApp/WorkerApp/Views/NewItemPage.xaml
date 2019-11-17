@@ -5,19 +5,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.NewItemPage"
-             Title="New Item">
-    
+             Title="Update Task">
+     
+     <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: white;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+            .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskStatus {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskDescription {
+                font-color: black;
+            }
+            #ItemsListView {
+                background-color: white;
+                border-color: #abb2bd;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+        <ToolbarItem
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Label Text="Status Update" FontSize="Medium" />
+            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" 
+Placeholder="Write about the Status of the work"/>
+            <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Send"></Button>
+            <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Skip"></Button>
+
         </StackLayout>
     </ContentPage.Content>
     

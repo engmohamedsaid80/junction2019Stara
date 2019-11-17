@@ -13,30 +13,38 @@ namespace WorkerApp.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public ItemUpdate _itemUpdate { get; set; }
 
-        public NewItemPage()
+        public NewItemPage(ItemUpdate itemUpdate)
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
+            _itemUpdate = itemUpdate;
 
             BindingContext = this;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
+            //MessagingCenter.Send(this, "AddItem", Item);
+            
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        private async void btnSave_Clicked(object sender, EventArgs e)
+        {
+            RestAPICaller caller = new RestAPICaller();
+            await caller.UpdateTaskAsync(_itemUpdate);
+            await Navigation.PopAsync();
+        }
+
+        private async void btnCancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

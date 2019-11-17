@@ -13,7 +13,8 @@ namespace WorkerApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
+            DependencyService.Register<StaraDataStore>();
             MainPage = new AppShell();
         }
 
