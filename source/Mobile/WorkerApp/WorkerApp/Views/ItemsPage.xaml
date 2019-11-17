@@ -59,12 +59,12 @@
         <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical" Margin="2">
+                        <StackLayout Orientation="Vertical" Margin="5">
                             <StackLayout Padding="15" Orientation="Horizontal">
                                 <Label
                                     StyleClass="TaskHeader"
                                     Text="{Binding Text}" 
-                                    LineBreakMode="NoWrap" 
+                                    
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="16"
                                     HorizontalOptions="StartAndExpand"
@@ -72,7 +72,7 @@
                                 <Label 
                                     StyleClass="TaskStatus"
                                     Text="{Binding Status}" 
-                                    LineBreakMode="NoWrap" 
+                                    
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="16"
                                     HorizontalOptions="EndAndExpand"

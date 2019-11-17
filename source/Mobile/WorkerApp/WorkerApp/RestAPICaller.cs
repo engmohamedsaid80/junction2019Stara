@@ -75,10 +75,10 @@ namespace WorkerApp
                         Item myItem = new Item();
                         myItem.Id = item.TaskId.ToString();
                         myItem.Text = item.Title;
-                        myItem.Description = "desc";
+                        myItem.Description = item.Description;
                         myItem.latitude = item.Latitude;
                         myItem.longitude = item.Longitude;
-                        myItem.priority = "Normal";
+                        myItem.priority = item.priority;
                         myItem.Status = item.Status;
                         myItem.building = item.BuildingName;
                         myItem.street = item.Streetname;

@@ -30,9 +30,12 @@ namespace WorkerApp.Views
         {
             //ApplyCondition();
             UpdateTask();
-            await Navigation.PushAsync(new NewItemPage(new ItemUpdate { taskId = viewModel.Item.Id, workerid="3" , Status = viewModel.Item.Status, wLatitude = viewModel.Item.WorkerLatitude, wLongitude = viewModel.Item.WorkerLongitude }));
+            await Navigation.PushAsync(new NewItemPage(this,new ItemUpdate 
+            { 
+                item = viewModel.Item,
+                taskId = viewModel.Item.Id, workerid="3" , Status = viewModel.Item.Status }));
         }
-        private void ApplyCondition()
+        public void ApplyCondition()
         {
             BindingContext = null;
             BindingContext = this.viewModel;

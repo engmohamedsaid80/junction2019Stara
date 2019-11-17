@@ -45,14 +45,20 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Status Update" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" 
-Placeholder="Write about the Status of the work"/>
-            <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Send"></Button>
-            <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" Text="Skip"></Button>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20">
+            <Label Text="Status Update" FontSize="Medium" VerticalOptions="CenterAndExpand" />
+                <Editor x:Name="txtComment" FontSize="Small" Margin="0"  VerticalOptions="CenterAndExpand"
+                     HeightRequest="200"
+                    Placeholder="Write about the Status of the work"/>
 
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="btnSave" Clicked="btnSave_Clicked" VerticalOptions="StartAndExpand" BackgroundColor="#0000bf" TextColor="White" Text="Send"></Button>
+                <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" VerticalOptions="EndAndExpand" BackgroundColor="Gray" TextColor="White" Text="Skip"></Button>
+
+            </StackLayout>
+            
         </StackLayout>
+        
     </ContentPage.Content>
     
 </ContentPage>

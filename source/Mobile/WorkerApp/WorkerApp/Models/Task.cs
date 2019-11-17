@@ -22,6 +22,10 @@ namespace WorkerApp.Models
 
         public String Title { get; set; }
 
+        public String Description { get; set; }
+
+        public String priority { get; set; }
+
         //  public List<TaskUpdate> TaskUpdates { get; set; }
     }
 }

@@ -488,3 +488,5 @@ D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\ob
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\stamp\_GenerateJavaStubs.stamp
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\stamp\_GeneratePackageManagerJava.stamp
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\splashscreen.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\android\src\md528caaf1d259f5b28362acd7c3775a94e\SplashScreen.java

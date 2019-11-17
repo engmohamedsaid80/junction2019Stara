@@ -501,3 +501,5 @@ D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\ob
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Debug\90\res\drawable\stara.png
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Debug\90\res\drawable\map.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Debug\90\res\drawable\splashscreen.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Debug\90\android\src\md528caaf1d259f5b28362acd7c3775a94e\SplashScreen.java

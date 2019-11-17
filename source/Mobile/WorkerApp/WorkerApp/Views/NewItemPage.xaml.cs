@@ -14,12 +14,15 @@ namespace WorkerApp.Views
     public partial class NewItemPage : ContentPage
     {
         public ItemUpdate _itemUpdate { get; set; }
+        private ItemDetailPage _detailsPage { get; set; }
 
-        public NewItemPage(ItemUpdate itemUpdate)
+        public NewItemPage(ItemDetailPage detailsPage, ItemUpdate itemUpdate)
         {
             InitializeComponent();
 
             _itemUpdate = itemUpdate;
+
+            _detailsPage = detailsPage;
 
             BindingContext = this;
         }
@@ -37,8 +40,17 @@ namespace WorkerApp.Views
 
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
+            _itemUpdate.wLatitude = _itemUpdate.item.WorkerLatitude;
+            _itemUpdate.wLongitude = _itemUpdate.item.WorkerLongitude;
+            _itemUpdate.comments = txtComment.Text;
+
             RestAPICaller caller = new RestAPICaller();
-            await caller.UpdateTaskAsync(_itemUpdate);
+            string res = await caller.UpdateTaskAsync(_itemUpdate);
+
+            if(res.Equals("OK"))
+            {
+                _detailsPage.ApplyCondition();
+            }
             await Navigation.PopAsync();
         }
 
