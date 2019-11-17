@@ -1,0 +1,16 @@
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\bin\Debug\netcoreapp3.0\StaraDomainModels.deps.json
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\bin\Debug\netcoreapp3.0\StaraDomainModels.dll
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.AssemblyInfoInputs.cache
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.AssemblyInfo.cs
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\bin\Debug\netcoreapp3.0\StaraDomainModels.pdb
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.dll
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.pdb
+C:\Users\Mohamed-Hassan\source\repos\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.csprojAssemblyReference.cache
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\bin\Debug\netcoreapp3.0\StaraDomainModels.deps.json
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\bin\Debug\netcoreapp3.0\StaraDomainModels.dll
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\bin\Debug\netcoreapp3.0\StaraDomainModels.pdb
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.AssemblyInfoInputs.cache
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.AssemblyInfo.cs
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.dll
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.pdb
+D:\MyWork\junction\junction2019Stara\source\Web\StaraDomainModels\obj\Debug\netcoreapp3.0\StaraDomainModels.csprojAssemblyReference.cache

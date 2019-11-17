@@ -1,0 +1,523 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>@ViewData["Title"]</h1>
+<body>
+
+
+
+    <div class="dbContent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8">
+                    <ul style="display: none;" class="tabs">
+                        <li><a class="active" href="#">Budget Dashboard</a></li>
+                        <li><a href="#">Contracts Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 fieldsWrapper">
+                    <label class="inputLabel">Select Year</label>
+                    <select class="inputSelect">
+                        <option>Year 01</option>
+                        <option>Year 01</option>
+                        <option>Year 01</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 largeChart">
+                    <div class="chart chartScroll">
+                        <h3 class="subTitle">Projects</h3>
+                        <a data-toggle="modal" data-target="#ChartModal01" href="#"><div id="chart05"></div></a>
+                        <div class="projectCounter">
+                            <h3>Number of Projects</h3>
+                            <span>15</span>
+                        </div>
+                        <table class="chartTable">
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Item Name</td>
+                                    <td>5,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Name</td>
+                                    <td>8,000,000</td>
+                                </tr>
+                               
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Total Amount</td>
+                                    <td>158,000,000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 chartsWrapper">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 largeChart">
+                            <div class="chart">
+                               
+                                <h3 class="subTitle">Projects Costs</h3>
+                                <div class="row-fluid">
+                                    <select class="inputSelect">
+                                        <option>Year 01</option>
+                                        <option>Year 01</option>
+                                        <option>Year 01</option>
+                                    </select>
+                                </div>
+                                <div id="chart02"></div>
+                                <table class="chartTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Item Name</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Item Name</td>
+                                            <td>5,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Item Name</td>
+                                            <td>8,000,000</td>
+                                        </tr>
+                                       
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total Amount</td>
+                                            <td>158,000,000</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 largeChart">
+                            <div class="chart">
+                                <h3 class="subTitle">Resource Allocation</h3>
+                                <div class="row-fluid">
+                                    <select class="inputSelect">
+                                        <option>Year 01</option>
+                                        <option>Year 01</option>
+                                        <option>Year 01</option>
+                                    </select>
+                                </div>
+                                <div id="chart03-s"></div>
+                                <table class="chartTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Item Name</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Item Name</td>
+                                            <td>5,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Item Name</td>
+                                            <td>8,000,000</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total Amount</td>
+                                            <td>158,000,000</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       
+                        <div class="col-lg-8 col-md-8 largeChart">
+                            <div class="chart">
+                                <h3 class="subTitle">Chart Title</h3>
+                                <div class="row-fluid">
+                                    <select class="inputSelect">
+                                        <option>Year 01</option>
+                                        <option>Year 01</option>
+                                        <option>Year 01</option>
+                                    </select>
+                                </div>
+                                <a data-toggle="modal" data-target="#ChartModal01" href="#"><div id="chart04"></div></a>
+                                <table class="chartTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Item Name</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Item Name</td>
+                                            <td>5,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Item Name</td>
+                                            <td>8,000,000</td>
+                                        </tr>
+                                     
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total Amount</td>
+                                            <td>158,000,000</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+       
+    </footer>
+    <!-- Modal -->
+    <div class="modal modalChart fade" id="ChartModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 1050px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Projects Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6 col-md-6">
+                        @*<div class="largeChart" id="chart03-l"></div>*@
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <table class="chartTable">
+                            <thead>
+                                <tr>
+                                    <th>Project ID</th>
+                                    <th>Project</th>
+                                    <th>Address</th>
+                                    <th>Start date</th>
+                                    <th>End date</th>
+                                    <th>Estimated costs</th>
+                                    <th>Realized costs</th>
+                                    <th>Revenue</th>
+                                    <th>Priority</th>
+                                    <th>Project manager</th>
+                                    <th>Assigned worker 1</th>
+                                    <th>Assigned worker 2</th>
+                                    <th>Assigned worker 3</th>
+                                    <th>Status</th>
+                                   
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>7834</td>
+                                    <td>Väinön peruskoulu</td>
+                                    <td>Hämeentie</td>
+                                    <td>11/13/2019</td>
+                                    <td>11/15/2019</td>
+                                    <td>5,000,000</td>
+                                    <td>4,000,000</td>
+                                    <td>1,000,000</td>
+                                    <td>crititcal</td>
+                                    <td>Rami</td>
+                                    <td>Esko</td>
+                                    <td>Pekka</td>
+                                    <td>Janne</td>
+                                    <td>20%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>5878</td>
+                                    <td>Meilahden sairaala</td>
+                                    <td>Hämeentie</td>
+                                    <td>01/13/2019</td>
+                                    <td>11/15/2019</td>
+                                    <td>10,000,000</td>
+                                    <td>4,000,000</td>
+                                    <td>6,000,000</td>
+                                    <td>crititcal</td>
+                                    <td>Rami</td>
+                                    <td>Pekka</td>
+                                    <td>Janne</td>
+                                    <td>jon</td>
+                                    <td>30%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>44646</td>
+                                    <td>Wanha Satama</td>
+                                    <td>Hämeentie</td>
+                                    <td>01/01/2019</td>
+                                    <td>11/15/2019</td>
+                                    <td>6,000,000</td>
+                                    <td>4,000,000</td>
+                                    <td>3,000,000</td>
+                                    <td>crititcal</td>
+                                    <td>JO</td>
+                                    <td>max</td>
+                                    <td>donna</td>
+                                    <td>minna</td>
+                                    <td>900%</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>85321</td>
+                                    <td>Väinön peruskoulu</td>
+                                    <td>Itis</td>
+                                    <td>6/13/2019</td>
+                                    <td>9/15/2019</td>
+                                    <td>3,000,000</td>
+                                    <td>4,000,000</td>
+                                    <td>1,000,000</td>
+                                    <td>crititcal</td>
+                                    <td>sami</td>
+                                    <td>bikka</td>
+                                    <td>mikka</td>
+                                    <td>Janne</td>
+                                    <td>10%</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>7834</td>
+                                    <td>Väinön peruskoulu</td>
+                                    <td>Hämeentie</td>
+                                    <td>11/13/2019</td>
+                                    <td>11/15/2019</td>
+                                    <td>5,000,000</td>
+                                    <td>4,000,000</td>
+                                    <td>1,000,000</td>
+                                    <td>crititcal</td>
+                                    <td>Rami</td>
+                                    <td>Esko</td>
+                                    <td>Pekka</td>
+                                    <td>Janne</td>
+                                    <td>20%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>7834</td>
+                                    <td>Väinön peruskoulu</td>
+                                    <td>Hämeentie</td>
+                                    <td>11/13/2019</td>
+                                    <td>11/15/2019</td>
+                                    <td>5,000,000</td>
+                                    <td>4,000,000</td>
+                                    <td>1,000,000</td>
+                                    <td>crititcal</td>
+                                    <td>Rami</td>
+                                    <td>Esko</td>
+                                    <td>Pekka</td>
+                                    <td>Janne</td>
+                                    <td>20%</td>
+                                </tr>
+
+
+                            </tbody>
+                            @*<tfoot>
+                                <tr>
+                                    <td>Total Amount</td>
+                                    <td>158,000,000</td>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        $(".inputSelect").select2();
+      });
+
+      var chart = c3.generate({
+          bindto: '#chart',
+          data: {
+            columns: [
+              ['data1', 30, 200, 100, 400, 150, 250],
+              ['data2', 50, 20, 10, 40, 15, 25]
+            ]
+          }
+      });
+      var chart = c3.generate({
+          bindto:'#chart0',
+          data: {
+              // iris data from R
+              columns: [
+                ['data1', 300, 100, 250, 150, 300, 150, 500],
+                ['data2', 100, 200, 150, 50, 100, 250]
+              ],
+              type : 'line',
+          }
+      });
+
+
+      var chart = c3.generate({
+          bindto:'#chart03-s',
+          data: {
+              // iris data from R
+              columns: [
+                  ['data1', 30],
+                  ['data2', 120],
+              ],
+              type : 'donut',
+          }
+      });
+
+      var chart = c3.generate({
+          bindto:'#chart03-l',
+          data: {
+              // iris data from R
+              columns: [
+                  ['data1', 30],
+                  ['data2', 120],
+              ],
+              type : 'pie',
+          }
+      });
+
+
+      var chart = c3.generate({
+          bindto:'#chart04',
+          data: {
+              // iris data from R
+              columns: [
+                ['data1', 300, 100, 250, 150, 300, 150, 500],
+                ['data2', 100, 200, 150, 50, 100, 250]
+              ],
+              type : 'pie',
+          }
+      });
+      var chart = c3.generate({
+          bindto:'#chart05',
+          data: {
+              columns: [
+                  ['Estimated costs', 30, 200, 100, 400, 150, 250],
+                  ['Realized costs', 130, 100, 140, 200, 150, 50]
+              ],
+              type: 'bar'
+          },
+          bar: {
+              width: {
+                  ratio: 0.5 // this makes bar width 50% of length between ticks
+              }
+              // or
+              //width: 100 // this makes bar width 100px
+          }
+      });
+
+      setTimeout(function () {
+          chart.load({
+              columns: [
+                  ['data3', 130, -150, 200, 300, -200, 100]
+              ]
+          });
+      }, 1000);
+      var chart = c3.generate({
+          bindto:'#chart06',
+          data: {
+          columns: [
+              ['data1', 100, 50, 0, 0, 0],
+              ['data2', 130, 140, 200, 150, 50]
+          ],
+          types: {
+              data1: 'area',
+              data2: 'area-spline'
+          }
+        }
+      });
+
+    //cost
+        var chart2 = c3.generate({
+            bindto:'#chart02',
+    data: {
+        columns: [
+            ['Tools', 30, 200, 100, 400, 150, 250],
+            ['Staff payments', 130, 100, 140, 200, 150, 50]
+        ],
+        type: 'bar'
+    },
+    bar: {
+        width: {
+            ratio: 0.8 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    },
+    axis: {
+      y: {
+        label: { // ADD
+          text: 'Thousand €',
+          position: 'outer-middle'
+        }
+      }
+    }
+});
+
+
+setTimeout(function () {
+    chart2.load({
+        columns: [
+            ['Transportation', 130, 150, 200, 300,200, 100]
+        ]
+    });
+}, 1000);
+
+
+
+        var chart3 = c3.generate({
+             bindto:'#chart03-s ',
+    data: {
+        columns: [
+            ['data1', 30],
+            ['data2', 120],
+        ],
+        type : 'donut',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    donut: {
+        title: ""
+    }
+});
+
+setTimeout(function () {
+    chart3.load({
+        columns: [
+            ["Project 1", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
+            ["Project 2", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
+            ["Project 3", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8],
+        ]
+    });
+}, 1500);
+
+setTimeout(function () {
+    chart3.unload({
+        ids: 'data1'
+    });
+    chart3.unload({
+        ids: 'data2'
+    });
+}, 2500);
+
+
+    </script>
+</body>

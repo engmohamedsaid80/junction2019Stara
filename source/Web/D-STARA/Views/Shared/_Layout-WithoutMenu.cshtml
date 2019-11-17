@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Al Rajhi eBot</title>
+
+    @*<environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+                  crossorigin="anonymous"
+                  integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
+
+        </environment>*@
+
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+    <link href="~/AlRajhiJordan/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <link href="~/AlRajhiJordan/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/icheck.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/datatables.min.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/nanoscroller.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/mainEn.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/taggle.min.css" rel="stylesheet" type="text/css">
+    <link href="~/AlRajhiJordan/css/taggle.min.css" rel="stylesheet" type="text/css">
+
+
+    <script type="text/javascript" src="~/AlRajhiJordan/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/icheck.min.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/loadingoverlay.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/datatables.min.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/dataTables.bootstrap4.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/taggle.min.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/jquery.nanoscroller.min.js"></script>
+    <script type="text/javascript" src="~/AlRajhiJordan/js/scripts.js"></script>
+
+
+</head>
+<body class="homePage">
+   
+   
+
+        <!-- Page Content  -->
+       @* <div id="content">*@
+           @* <div class="container">*@
+                @*<partial name="_CookieConsentPartial" />*@
+                @*<main role="main" class="pb-3">*@
+                    @RenderBody();
+
+                @*</main>*@
+            @*</div>*@
+
+        @*</div>*@
+
+
+
+       
+    
+    @RenderSection("Footer", required: false)
+    <footer class="border-top footer text-muted" id="footer_layout">
+      
+
+        <div class="row mt-3">
+            <p class="pweredBy"><strong>Powered by</strong> <img src="~/AlRajhiJordan/images/ejada_logo.png" alt="Ejada"></p>
+        </div>
+    </footer>
+
+
+    @RenderSection("Scripts", required: false)
+
+    @RenderSection("HiddenFields", required: false)
+
+</body>
+</html>
+
+
+
+
