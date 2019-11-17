@@ -56,7 +56,7 @@
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected"
-                margin="6">
+                  Margin="6">
         <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -75,7 +75,7 @@
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     StyleClass="TaskPriority"
                                     FontSize="18"
-                                    HorizontalOptions="center"
+                                    HorizontalOptions="Center"
                                     />    
                                 <Label 
                                     StyleClass="TaskStatus"
