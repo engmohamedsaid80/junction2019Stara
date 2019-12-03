@@ -49,6 +49,21 @@ namespace WorkerApp.Services
             RestAPICaller restCaller = new RestAPICaller();
 
             items = await restCaller.GetTasksAsync(3);
+
+            foreach (Item i in items)
+            {
+                switch (i.Status)
+                {
+                    case "Assigned": i.StatusImage = "assigned.png"; break;
+                    case "Started": i.StatusImage = "started.png"; break;
+                    case "Paused": i.StatusImage = "paused.png"; break;
+                    case "Completed": i.StatusImage = "completed.png"; break;
+                }
+
+                if (i.priority == "Normal") i.PriorityImage = "normal.png";
+                else i.PriorityImage = "urgent.png";
+            }
+
         }
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {

@@ -13,7 +13,7 @@
             <![CDATA[
             ^contentpage {
                 font-family: "Arial";
-                background-color: white;
+                background-color: #D3D3D3;
             }
             .Toolbar {
                 background-color: #0000bf;
@@ -31,7 +31,7 @@
                 color: #abb2bd;
             }
             #ItemsListView {
-                background-color: white;
+                background-color: #D3D3D3;
                 border-color: #abb2bd;
             }
             ]]>
@@ -60,53 +60,71 @@
         <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical">
-                            <StackLayout Padding="15" Orientation="Horizontal">
+                        <Frame CornerRadius="7"  
+                               OutlineColor="LightGray" Margin="0,4,0,4">
+                            <Grid Margin="4" Padding="4,4,0,0" BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <!--<RowDefinition Height="*"/>-->
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
                                 <Label
                                     StyleClass="TaskHeader"
                                     Text="{Binding Text}" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="18"
-                                    HorizontalOptions="StartAndExpand"
                                     FontAttributes="Bold"
+                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                     />
-                                <Label 
+                                <!--<Label 
                                     Text="{Binding priority}" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     StyleClass="TaskPriority"
                                     FontSize="18"
-                                    HorizontalOptions="Center"
-                                    />    
-                                <Label 
+                                    Grid.Row="0" Grid.Column="2"
+                                    />-->
+                                <Image Source="{Binding PriorityImage}" Grid.Row="0" Grid.Column="2"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+                                <!--<Label 
                                     StyleClass="TaskStatus"
                                     Text="{Binding Status}" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="18"
-                                    HorizontalOptions="EndAndExpand"
                                     FontAttributes="Bold"
-                                    />
-                            </StackLayout>
-
-                            <Label 
+                                    Grid.Row="0" Grid.Column="3"
+                                    />-->
+                                <Image Source="{Binding StatusImage}" Grid.Row="0" Grid.Column="3"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+                                <!--<Label 
                                 StyleClass="TaskDescription"
                                 Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="16" />
-                            <Label 
+                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                                FontSize="16" />-->
+                                <Label 
                                 StyleClass="TaskBuilding"
                                 Text="{Binding building}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
+                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                 FontSize="16" />
-
-                            <Label 
+                                <Label 
                                 StyleClass="TaskStreet"
                                 Text="{Binding street}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
+                                Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
                                 FontSize="16" />
-                        </StackLayout>
+                            </Grid>
+                        </Frame>
+                       
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

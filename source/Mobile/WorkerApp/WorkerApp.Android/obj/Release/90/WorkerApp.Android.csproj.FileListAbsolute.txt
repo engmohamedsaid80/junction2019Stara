@@ -1,7 +1,5 @@
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\WorkerApp.Android.dll
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\WorkerApp.Android.pdb
-D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\com.companyname.workerapp.apk
-D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\com.companyname.workerapp-Signed.apk
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\WorkerApp.dll
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\WorkerApp.pdb
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
@@ -40,7 +38,6 @@ D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\ob
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\WorkerApp.Android.csproj.CopyComplete
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\WorkerApp.Android.dll
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\WorkerApp.Android.pdb
-D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\android\bin\com.companyname.workerapp.apk
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\layout\tabbar.xml
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\layout\toolbar.xml
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\values\styles.xml
@@ -490,3 +487,13 @@ D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\ob
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\stamp\_ResolveLibraryProjectImports.stamp
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\splashscreen.png
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\android\src\md528caaf1d259f5b28362acd7c3775a94e\SplashScreen.java
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\com.shsmk.workerapp.apk
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\bin\Release\com.shsmk.workerapp-Signed.apk
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\android\bin\com.shsmk.workerapp.apk
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\android\src\com\shsmk\workerapp\R.java
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\completed.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\paused.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\started.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\assigned.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\urgent.png
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp.Android\obj\Release\90\res\drawable\normal.png

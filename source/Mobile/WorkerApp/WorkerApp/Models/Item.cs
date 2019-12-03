@@ -11,7 +11,11 @@ namespace WorkerApp.Models
 
         public String Status { get; set; }
 
+        public string StatusImage { get; set; }
+
         public string priority { get; set; }
+
+        public string PriorityImage { get; set; }
         public string building { get; set; }
         public string street { get; set; }
 
