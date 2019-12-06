@@ -14,5 +14,7 @@ namespace WorkerApp.Models
         public string workerid { get; set; }
         public string wLatitude { get; set; }
         public string wLongitude { get; set; }
+
+        public string PictureUrl { get; set; }
     }
 }

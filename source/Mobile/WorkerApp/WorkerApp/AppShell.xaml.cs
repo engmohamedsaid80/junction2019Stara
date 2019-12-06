@@ -10,6 +10,8 @@ namespace WorkerApp
         public AppShell()
         {
             InitializeComponent();
+
+            this.Navigation.PushModalAsync(new LoginPage());
         }
     }
 }

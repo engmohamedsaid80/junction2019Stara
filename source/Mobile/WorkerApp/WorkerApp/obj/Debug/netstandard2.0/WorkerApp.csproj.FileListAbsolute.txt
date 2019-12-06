@@ -10,8 +10,9 @@ D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\WorkerApp.AssemblyInfo.cs
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\bin\Debug\netstandard2.0\ref\WorkerApp.dll
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\bin\Debug\netstandard2.0\WorkerApp.pdb
-D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\WorkerApp.dll
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\ref\WorkerApp.dll
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\WorkerApp.pdb
 D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\WorkerApp.csprojAssemblyReference.cache
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
+D:\Other\Euro-Junction\2019\project\source\Mobile\WorkerApp\WorkerApp\obj\Debug\netstandard2.0\XamlC.stamp

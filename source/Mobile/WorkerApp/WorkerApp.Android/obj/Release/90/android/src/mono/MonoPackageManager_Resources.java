@@ -4,7 +4,11 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "WorkerApp.Android.dll" comes first in this list. */
 		"WorkerApp.Android.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.WindowsAzure.Storage.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.CurrentActivity.dll",
+		"Plugin.Media.dll",
+		"Plugin.Permissions.dll",
 		"WorkerApp.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="WorkerApp.Views.ItemDetailPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}" BackgroundColor="#D3D3D3">
 
      <ContentPage.Resources>
         <StyleSheet>
@@ -42,71 +42,78 @@
                         Priority="0" />
             </ContentPage.ToolbarItems>
 
-    <StackLayout Orientation="Vertical" Spacing="20" Padding="15">
-        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  Spacing="20">
-            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand"  Spacing="20" Padding="15">
+    <!--<StackLayout BackgroundColor="#D3D3D3" Spacing="20" Margin="4" Padding="4" VerticalOptions="FillAndExpand">-->
+        <Frame CornerRadius="7" 
+                               OutlineColor="LightGray" Margin="5,70,5,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <Label
-                StyleClass="TaskHeader"
-                Text="{Binding Item.Text}" 
-                LineBreakMode="NoWrap" 
-                Style="{DynamicResource ListItemTextStyle}" 
-                FontSize="16"
-                HorizontalOptions="StartAndExpand"
-            />
-                <Label 
-                StyleClass="Status"
-                Text="{Binding Item.priority}" 
-                LineBreakMode="NoWrap" 
-                Style="{DynamicResource ListItemTextStyle}" 
-                FontSize="16"
-                HorizontalOptions="CenterAndExpand"
-            />
-                <Label 
-                StyleClass="Status"
-                Text="{Binding Item.Status}" 
-                LineBreakMode="NoWrap" 
-                Style="{DynamicResource ListItemTextStyle}" 
-                FontSize="16"
-                HorizontalOptions="EndAndExpand"
-            />
-            </StackLayout>
+                    StyleClass="TaskHeader"
+                    Text="{Binding Item.Text}" 
+                    LineBreakMode="NoWrap" 
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                />
+                <Image Source="{Binding Item.PriorityImage}" Grid.Row="0" Grid.Column="2"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+                <Image Source="{Binding Item.StatusImage}" Grid.Row="0" Grid.Column="3"
+                                       HeightRequest="50" WidthRequest="50"></Image>
 
-            <Label Text="{Binding Item.Description}" FontSize="Medium"/>
+                <Label Text="{Binding Item.Description}" FontSize="Medium" Grid.Row="1" Grid.ColumnSpan="4"/>
 
-            <Label Text="CONTACT PERSON:" FontSize="Medium" />
-            <Label Text="PHONE NUMBER:" FontSize="Medium" />
+                <Label Text="STREET:" FontSize="Medium" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="{Binding Item.street}"  FontSize="Medium" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-            <StackLayout Orientation="Horizontal">
-                <Label StyleClass="SeePictures" Text="SEE UPDATES" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
-            
+                <Label Text="BUILDING:" FontSize="Medium" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                <Label Text="{Binding Item.building}"  FontSize="Medium" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-            <Label Text="Street:" FontSize="Medium" />
-            <Label Text="{Binding Item.street}"  FontSize="Medium"/>
+                <Label Text="CONTACT PERSON:" FontSize="Medium" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Text="PHONE NUMBER:" FontSize="Medium" FontAttributes="Bold" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-            <Label Text="Buidling:" FontSize="Medium" />
-            <Label Text="{Binding Item.building}"  FontSize="Small"/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label StyleClass="SeePictures" Text="SEE UPDATES" FontSize="Medium" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2"/>
 
-                <Image x:Name="btnMap" Source="map.png" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32" Aspect="Fill" IsVisible="true">
+                <Label Text="LOCATION:" FontSize="Medium" FontAttributes="Bold" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+                
+                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="2">
+                <Image x:Name="btnMap" Source="map.png" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" 
+                       IsVisible="true" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="btnMap_Clicked"  />
                     </Image.GestureRecognizers>
                 </Image>
-
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
-                <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
+
+
+            <StackLayout Orientation="Horizontal" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Padding="0,0,10,0">
+                    <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
                      HorizontalOptions="CenterAndExpand" BackgroundColor="DarkGreen" TextColor="White"></Button>
-                <Button x:Name="btnPause" Text="Pause" BackgroundColor="#0000bf" TextColor="White" Clicked="btnPause_Clicked"
+                    <Button x:Name="btnPause" Text="Pause" BackgroundColor="#0000bf" TextColor="White" Clicked="btnPause_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
-                <Button x:Name="btnResume" Text="Resume" BackgroundColor="DarkGreen" TextColor="White" Clicked="btnResume_Clicked" 
+                    <Button x:Name="btnResume" Text="Resume" BackgroundColor="DarkGreen" TextColor="White" Clicked="btnResume_Clicked" 
                     HorizontalOptions="CenterAndExpand"></Button>
-                <Button x:Name="btnEnd" Text="End" BackgroundColor="Red" TextColor="White" Clicked="btnEnd_Clicked"
+                    <Button x:Name="btnEnd" Text="End" BackgroundColor="Red" TextColor="White" Clicked="btnEnd_Clicked"
                     HorizontalOptions="CenterAndExpand"></Button>
-            </StackLayout>
-        </StackLayout>
-
-    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    <!--</StackLayout>-->
 </ContentPage>

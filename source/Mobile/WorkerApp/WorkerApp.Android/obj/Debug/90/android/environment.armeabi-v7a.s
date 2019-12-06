@@ -23,8 +23,8 @@
 	.section	.rodata..L.str.1,"aMS",%progbits,1
 	.type	.L.str.1, %object
 .L.str.1:
-	.asciz	"com.companyname.workerapp"
-	.size	.L.str.1, 26
+	.asciz	"com.shsmk.workerapp"
+	.size	.L.str.1, 20
 	.section	.data.application_config,"aw",%progbits
 	.type	application_config, %object
 	.p2align	2
@@ -82,7 +82,7 @@ mono_aot_mode_name:
 	.section	.rodata..L.str.8,"aMS",%progbits,1
 	.type	.L.str.8, %object
 .L.str.8:
-	.asciz	"90081c39-b5f3-4717-ab0b-f6ae371fc9c9"
+	.asciz	"cf18b9ef-265a-48c0-a6e0-44e8b2d6925e"
 	.size	.L.str.8, 37
 	.section	.rodata..L.str.9,"aMS",%progbits,1
 	.type	.L.str.9, %object
