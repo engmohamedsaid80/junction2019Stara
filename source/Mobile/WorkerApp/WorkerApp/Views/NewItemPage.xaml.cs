@@ -78,10 +78,10 @@ namespace WorkerApp.Views
             StorageManager storageManager = new StorageManager();
 
             return await storageManager.UploadImage(
-                "worker_3_" + 
-                _itemUpdate.item.Id + "_" + 
-                _itemUpdate.item.Status + "_" + 
-                DateTime.Now.ToString("yyyyMMddHHmmss"), 
+                "worker_3_" +
+                _itemUpdate.item.Id + "_" +
+                _itemUpdate.item.Status + "_" +
+                DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg",
                 ImageFile.GetStream()
                 );
         }
