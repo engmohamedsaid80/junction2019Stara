@@ -27,7 +27,7 @@ namespace WorkerApp.Helpers
             await blockBlob.UploadFromStreamAsync(fileStream);
 
 
-            FileUrl = "https://" + StorageAccountName + ".blob.core.windows.net/merchantproducts/" + ImageFileName;
+            FileUrl = "https://" + StorageAccountName + ".blob.core.windows.net/taskupdates/" + ImageFileName;
 
             return FileUrl;
         }
