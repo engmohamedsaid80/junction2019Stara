@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CustomerApp.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White" Padding="0,10,0,5">
+            <Image Source="loginlogo.png" 
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Customer ID" TextColor="#0000bf" FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Entry x:Name="txtWoid"  VerticalOptions="Start" 
+                   WidthRequest="250"
+                   
+                HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="Password" VerticalOptions="Center"  TextColor="#0000bf" FontSize="Large"
+                HorizontalOptions="CenterAndExpand"/>
+            
+            <Entry x:Name="txtPass" IsPassword="True" 
+                   VerticalOptions="Start" 
+                   WidthRequest="250"
+                   HorizontalOptions="CenterAndExpand"/>
+            
+            <Button x:Name="btnLogin" Clicked="btnLogin_Clicked" Text="Login" TextColor="White"
+                    VerticalOptions="CenterAndExpand" BackgroundColor="#0000bf"
+                    HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

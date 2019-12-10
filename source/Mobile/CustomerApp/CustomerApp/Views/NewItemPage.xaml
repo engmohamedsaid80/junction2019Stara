@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CustomerApp.Views.NewItemPage"
+             Title="Update Task" BackgroundColor="#D3D3D3">
+     
+     <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: white;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+            .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskStatus {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskDescription {
+                font-color: black;
+            }
+            #ItemsListView {
+                background-color: white;
+                border-color: #abb2bd;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <Frame CornerRadius="7" 
+                               OutlineColor="LightGray" Margin="5,70,5,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="STATUS UPDATE" FontSize="Medium" FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+
+                <Editor x:Name="txtComment" FontSize="Small" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2"
+                    Placeholder="Write about the Status of the work"/>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+                    <Image x:Name="btnMap" Source="camera.png" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" 
+                       IsVisible="true" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnPhoto_Clicked"  />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    
+                </StackLayout>
+
+                <Image x:Name="imgUpdate" Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"></Image>
+
+                <ActivityIndicator x:Name="actInd" Color="Blue"  Grid.Row="4" Grid.Column="0"></ActivityIndicator>
+                
+                <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4">
+                    <Button x:Name="btnSave" Clicked="btnSave_Clicked" HorizontalOptions="StartAndExpand" BackgroundColor="#0000bf" TextColor="White" Text="Send"></Button>
+                    <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="Gray" TextColor="White" Text="Cancel"></Button>
+                </StackLayout>
+            </Grid>
+
+            
+        </Frame>
+    </ContentPage.Content>
+    
+</ContentPage>

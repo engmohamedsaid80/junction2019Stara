@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CustomerApp.Views.ItemDetailPage"
+             Title="{Binding Title}" BackgroundColor="#D3D3D3">
+
+     <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: white;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+           .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .Priority {
+                color: #bd2719;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .SeePictures {
+                color: #0000bf;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+        
+            <ContentPage.ToolbarItems>
+                <ToolbarItem
+                        Text="Example Item"
+                        IconImageSource="stara.png"
+                        Order="Primary"
+                        Priority="0" />
+            </ContentPage.ToolbarItems>
+
+    <!--<StackLayout BackgroundColor="#D3D3D3" Spacing="20" Margin="4" Padding="4" VerticalOptions="FillAndExpand">-->
+        <Frame CornerRadius="7" 
+                               OutlineColor="LightGray" Margin="5,70,5,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    StyleClass="TaskHeader"
+                    Text="{Binding Item.Text}" 
+                    LineBreakMode="NoWrap" 
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                />
+                <Image Source="{Binding Item.PriorityImage}" Grid.Row="0" Grid.Column="2"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+                <Image Source="{Binding Item.StatusImage}" Grid.Row="0" Grid.Column="3"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+
+                <Label Text="{Binding Item.Description}" FontSize="Medium" Grid.Row="1" Grid.ColumnSpan="4"/>
+
+                <Label Text="STREET:" FontSize="Medium" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="{Binding Item.street}"  FontSize="Medium" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                <Label Text="BUILDING:" FontSize="Medium" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                <Label Text="{Binding Item.building}"  FontSize="Medium" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                <Label Text="CONTACT PERSON:" FontSize="Medium" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Text="PHONE NUMBER:" FontSize="Medium" FontAttributes="Bold" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                <Label StyleClass="SeePictures" Text="SEE UPDATES" FontSize="Medium" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label StyleClass="SeePictures" Text="SEE PICTURES" FontSize="Medium" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2"/>
+
+                <Label Text="LOCATION:" FontSize="Medium" FontAttributes="Bold" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+                
+                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="2">
+                <Image x:Name="btnMap" Source="map.png" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" 
+                       IsVisible="true" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnMap_Clicked"  />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Padding="0,0,10,0">
+                    <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"
+                     HorizontalOptions="CenterAndExpand" BackgroundColor="DarkGreen" TextColor="White"></Button>
+                    <Button x:Name="btnPause" Text="Pause" BackgroundColor="#0000bf" TextColor="White" Clicked="btnPause_Clicked"
+                    HorizontalOptions="CenterAndExpand"></Button>
+                    <Button x:Name="btnResume" Text="Resume" BackgroundColor="DarkGreen" TextColor="White" Clicked="btnResume_Clicked" 
+                    HorizontalOptions="CenterAndExpand"></Button>
+                    <Button x:Name="btnEnd" Text="End" BackgroundColor="Red" TextColor="White" Clicked="btnEnd_Clicked"
+                    HorizontalOptions="CenterAndExpand"></Button>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    <!--</StackLayout>-->
+</ContentPage>

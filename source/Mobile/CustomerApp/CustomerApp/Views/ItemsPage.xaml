@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CustomerApp.Views.ItemsPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.Resources>
+        <StyleSheet>
+            <![CDATA[
+            ^contentpage {
+                font-family: "Arial";
+                background-color: #D3D3D3;
+            }
+            .Toolbar {
+                background-color: #0000bf;
+            }
+            .TaskHeader {
+                color: #bd2719;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .TaskStatus {
+                color: #bd2719;
+                text-transform: uppercase;
+            }
+            .TaskDescription {
+                color: #abb2bd;
+            }
+            #ItemsListView {
+                background-color: #D3D3D3;
+                border-color: #abb2bd;
+            }
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+                Text="Example Item"
+                IconImageSource="stara.png"
+                Order="Primary"
+                Priority="0" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected"
+                  Margin="6">
+        <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="7"  
+                               OutlineColor="LightGray" Margin="0,4,0,4">
+                            <Grid Margin="4" Padding="4,4,0,0" BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <!--<RowDefinition Height="*"/>-->
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    StyleClass="TaskHeader"
+                                    Text="{Binding Text}" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                    />
+                                <!--<Label 
+                                    Text="{Binding priority}" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    StyleClass="TaskPriority"
+                                    FontSize="18"
+                                    Grid.Row="0" Grid.Column="2"
+                                    />-->
+                                <Image Source="{Binding PriorityImage}" Grid.Row="0" Grid.Column="2"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+                                <!--<Label 
+                                    StyleClass="TaskStatus"
+                                    Text="{Binding Status}" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    Grid.Row="0" Grid.Column="3"
+                                    />-->
+                                <Image Source="{Binding StatusImage}" Grid.Row="0" Grid.Column="3"
+                                       HeightRequest="50" WidthRequest="50"></Image>
+                                <!--<Label 
+                                StyleClass="TaskDescription"
+                                Text="{Binding Description}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                                FontSize="16" />-->
+                                <Label 
+                                StyleClass="TaskBuilding"
+                                Text="{Binding building}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                FontSize="16" />
+                                <Label 
+                                StyleClass="TaskStreet"
+                                Text="{Binding street}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                                FontSize="16" />
+                            </Grid>
+                        </Frame>
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
