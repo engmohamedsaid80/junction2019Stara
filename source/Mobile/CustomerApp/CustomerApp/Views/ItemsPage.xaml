@@ -39,11 +39,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem
-                Text="Example Item"
-                IconImageSource="stara.png"
-                Order="Primary"
-                Priority="0" />
+        <ToolbarItem Text="Add Request" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>
@@ -80,34 +76,9 @@
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="18"
                                     FontAttributes="Bold"
-                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
                                     />
-                                <!--<Label 
-                                    Text="{Binding priority}" 
-                                    Style="{DynamicResource ListItemTextStyle}" 
-                                    StyleClass="TaskPriority"
-                                    FontSize="18"
-                                    Grid.Row="0" Grid.Column="2"
-                                    />-->
-                                <Image Source="{Binding PriorityImage}" Grid.Row="0" Grid.Column="2"
-                                       HeightRequest="50" WidthRequest="50"></Image>
-                                <!--<Label 
-                                    StyleClass="TaskStatus"
-                                    Text="{Binding Status}" 
-                                    Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="18"
-                                    FontAttributes="Bold"
-                                    Grid.Row="0" Grid.Column="3"
-                                    />-->
-                                <Image Source="{Binding StatusImage}" Grid.Row="0" Grid.Column="3"
-                                       HeightRequest="50" WidthRequest="50"></Image>
-                                <!--<Label 
-                                StyleClass="TaskDescription"
-                                Text="{Binding Description}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
-                                FontSize="16" />-->
+                                
                                 <Label 
                                 StyleClass="TaskBuilding"
                                 Text="{Binding building}" 

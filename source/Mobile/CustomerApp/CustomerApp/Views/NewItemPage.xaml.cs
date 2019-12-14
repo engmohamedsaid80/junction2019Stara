@@ -16,27 +16,18 @@ namespace CustomerApp.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public ItemUpdate _itemUpdate { get; set; }
-        private ItemDetailPage _detailsPage { get; set; }
-
+        public CustomerRequest _CustomerRequest { get; set; }
+        
         private MediaFile ImageFile { get; set; }
 
-        public NewItemPage(ItemDetailPage detailsPage, ItemUpdate itemUpdate)
+        public NewItemPage()
         {
             InitializeComponent();
 
-            _itemUpdate = itemUpdate;
-
-            _detailsPage = detailsPage;
+            _CustomerRequest = new CustomerRequest();
 
             BindingContext = this;
         }
-
-        //async void Save_Clicked(object sender, EventArgs e)
-        //{
-        //    //MessagingCenter.Send(this, "AddItem", Item);
-            
-        //}
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {
@@ -54,23 +45,20 @@ namespace CustomerApp.Views
             btnSave.IsEnabled = false;
             ActIndicatorOn(true);
 
-            _itemUpdate.PictureUrl = await UploadPhoto();
+            _CustomerRequest.PictureUrl = await UploadPhoto();
 
-            _itemUpdate.wLatitude = _itemUpdate.item.WorkerLatitude;
-            _itemUpdate.wLongitude = _itemUpdate.item.WorkerLongitude;
-            _itemUpdate.comments = txtComment.Text;
+            _CustomerRequest.Title = txtTitle.Text;
+            _CustomerRequest.Streetname = txtStreet.Text;
+            _CustomerRequest.BuildingName = txtBuilding.Text;
+            _CustomerRequest.Description = txtComment.Text;
 
             RestAPICaller caller = new RestAPICaller();
-            string res = await caller.UpdateTaskAsync(_itemUpdate);
+            string res = await caller.UpdateTaskAsync(_CustomerRequest);
 
             ActIndicatorOn(false);
             btnSave.IsEnabled = true;
 
-            if (res.Equals("OK"))
-            {
-                _detailsPage.ApplyCondition();
-            }
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         private async Task<string> UploadPhoto()
@@ -78,16 +66,14 @@ namespace CustomerApp.Views
             StorageManager storageManager = new StorageManager();
 
             return await storageManager.UploadImage(
-                "worker_3_" +
-                _itemUpdate.item.Id + "_" +
-                _itemUpdate.item.Status + "_" +
+                "request_" +
                 DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg",
                 ImageFile.GetStream()
                 );
         }
         private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         private async void btnPhoto_Clicked(object sender, EventArgs e)

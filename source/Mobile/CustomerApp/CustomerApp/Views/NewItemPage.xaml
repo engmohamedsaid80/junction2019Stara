@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CustomerApp.Views.NewItemPage"
-             Title="Update Task" BackgroundColor="#D3D3D3">
+             Title="New Request" BackgroundColor="#D3D3D3">
      
      <ContentPage.Resources>
         <StyleSheet>
@@ -46,9 +46,12 @@
     
     <ContentPage.Content>
         <Frame CornerRadius="7" 
-                               OutlineColor="LightGray" Margin="5,70,5,10">
+                               OutlineColor="LightGray" Margin="5,30,5,10">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -63,12 +66,15 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="STATUS UPDATE" FontSize="Medium" FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <Entry x:Name="txtTitle" Placeholder="Title" FontSize="Small" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+                <Entry x:Name="txtStreet" Placeholder="Street" FontSize="Small" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
+                <Entry x:Name="txtBuilding" Placeholder="Building" FontSize="Small" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" />
+                <Label Text="Description" FontSize="Medium" FontAttributes="Bold"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
 
-                <Editor x:Name="txtComment" FontSize="Small" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2"
-                    Placeholder="Write about the Status of the work"/>
+                <Editor x:Name="txtComment" FontSize="Small" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2"
+                    Placeholder="Write request details here"/>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+                <StackLayout Orientation="Horizontal" Grid.Row="6" Grid.Column="0">
                     <Image x:Name="btnMap" Source="camera.png" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" 
                        IsVisible="true" >
                         <Image.GestureRecognizers>
@@ -78,11 +84,11 @@
                     
                 </StackLayout>
 
-                <Image x:Name="imgUpdate" Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"></Image>
+                <Image x:Name="imgUpdate" Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"></Image>
 
-                <ActivityIndicator x:Name="actInd" Color="Blue"  Grid.Row="4" Grid.Column="0"></ActivityIndicator>
+                <ActivityIndicator x:Name="actInd" Color="Blue"  Grid.Row="7" Grid.Column="0"></ActivityIndicator>
                 
-                <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4">
+                <StackLayout Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4">
                     <Button x:Name="btnSave" Clicked="btnSave_Clicked" HorizontalOptions="StartAndExpand" BackgroundColor="#0000bf" TextColor="White" Text="Send"></Button>
                     <Button x:Name="btnCancel" Clicked="btnCancel_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="Gray" TextColor="White" Text="Cancel"></Button>
                 </StackLayout>

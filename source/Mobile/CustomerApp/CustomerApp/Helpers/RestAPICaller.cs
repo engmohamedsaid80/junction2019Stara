@@ -17,16 +17,16 @@ namespace CustomerApp.Helpers
             RestUrl = "https://staraapi.azurewebsites.net";
         }
 
-        public async Task<string> UpdateTaskAsync(ItemUpdate itemUpdate)
+        public async Task<string> UpdateTaskAsync(CustomerRequest request)
         {
-            string url = RestUrl + "/api/Tasks";
+            string url = RestUrl + "/api/Requests";
             StringResponse ServiceResp = new StringResponse { Response = "" };
 
             try
             {
                 var uri = new Uri(string.Format(url, string.Empty));
 
-                var json = JsonConvert.SerializeObject(itemUpdate);
+                var json = JsonConvert.SerializeObject(request);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 HttpClient client = new HttpClient();
@@ -43,11 +43,11 @@ namespace CustomerApp.Helpers
 
             return ServiceResp.Response;
         }
-        public async Task<List<Item>> GetTasksAsync(int id)
+        public async Task<List<Item>> GetRequestsAsync()
         {
-            string url = RestUrl + "/api/Tasks/" + id;
+            string url = RestUrl + "/api/Requests";
 
-            List<Models.Task> TaskItems = null;
+            List<Models.CustomerRequest> CustomerRequests = null;
             List<Item> Items = new List<Item>();
 
             //Items = new List<Item>()
@@ -68,18 +68,14 @@ namespace CustomerApp.Helpers
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    TaskItems = JsonConvert.DeserializeObject<List<Models.Task>>(content);
+                    CustomerRequests = JsonConvert.DeserializeObject<List<Models.CustomerRequest>>(content);
 
-                    foreach (Models.Task item in TaskItems)
+                    foreach (Models.CustomerRequest item in CustomerRequests)
                     {
                         Item myItem = new Item();
-                        myItem.Id = item.TaskId.ToString();
+                        myItem.Id = item.RequestId.ToString();
                         myItem.Text = item.Title;
                         myItem.Description = item.Description;
-                        myItem.latitude = item.Latitude;
-                        myItem.longitude = item.Longitude;
-                        myItem.priority = item.priority;
-                        myItem.Status = item.Status;
                         myItem.building = item.BuildingName;
                         myItem.street = item.Streetname;
 

@@ -20,14 +20,14 @@ namespace CustomerApp.Helpers
             storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=" + StorageAccountName + ";AccountKey=" + StorageAccountKey);
 
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-            CloudBlobContainer container = blobClient.GetContainerReference("taskupdates");
+            CloudBlobContainer container = blobClient.GetContainerReference("customerrequests");
 
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(ImageFileName);
 
             await blockBlob.UploadFromStreamAsync(fileStream);
 
 
-            FileUrl = "https://" + StorageAccountName + ".blob.core.windows.net/taskupdates/" + ImageFileName;
+            FileUrl = "https://" + StorageAccountName + ".blob.core.windows.net/customerrequests/" + ImageFileName;
 
             return FileUrl;
         }
