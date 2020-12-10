@@ -5255,7 +5255,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohamed Saeed\\.nuget\\packages\\": {},
+    "C:\\Users\\msaeed\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
@@ -5264,7 +5264,7 @@
       "projectUniqueName": "D:\\Other\\Euro-Junction\\2019\\project\\source\\Mobile\\WorkerApp\\WorkerApp.Android\\WorkerApp.Android.csproj",
       "projectName": "WorkerApp.Android",
       "projectPath": "D:\\Other\\Euro-Junction\\2019\\project\\source\\Mobile\\WorkerApp\\WorkerApp.Android\\WorkerApp.Android.csproj",
-      "packagesPath": "C:\\Users\\Mohamed Saeed\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\msaeed\\.nuget\\packages\\",
       "outputPath": "D:\\Other\\Euro-Junction\\2019\\project\\source\\Mobile\\WorkerApp\\WorkerApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -5272,7 +5272,7 @@
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mohamed Saeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\msaeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

@@ -705,9 +705,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohamed Saeed\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\msaeed\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -715,15 +714,14 @@
       "projectUniqueName": "D:\\Other\\Euro-Junction\\2019\\project\\source\\Mobile\\WorkerApp\\WorkerApp\\WorkerApp.csproj",
       "projectName": "WorkerApp",
       "projectPath": "D:\\Other\\Euro-Junction\\2019\\project\\source\\Mobile\\WorkerApp\\WorkerApp\\WorkerApp.csproj",
-      "packagesPath": "C:\\Users\\Mohamed Saeed\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\msaeed\\.nuget\\packages\\",
       "outputPath": "D:\\Other\\Euro-Junction\\2019\\project\\source\\Mobile\\WorkerApp\\WorkerApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mohamed Saeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\msaeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -785,7 +783,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
